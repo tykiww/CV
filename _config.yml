@@ -4,7 +4,7 @@ bio:            'Just a simple Jekyll theme'
 description:    "JBlog is a minimal, one column and blue jekyll theme for your blog."
 picture:        'assets/img/profile.png'
 locale:         en_US
-url:            https://alperenbozkurt.github.io/JBlog
+url:            https://tykiww.github.io/sandbox2
 
 
 # Jekyll
@@ -33,7 +33,7 @@ facebook: username
   #ad-client:
   #ad-slot:
 #bing-verify:
-github: username
+github: tykiww
 stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
 linkedin: username
 #xing: username
