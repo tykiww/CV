@@ -3,7 +3,7 @@ layout: post
 title:  "Rvest & The Luhn Algorithm"
 image: "https://www.streetinsider.com/images/news2/139/13920358/LYNXNPEE271FK.jpg"
 # date:   2017-07-05
-excerpt: "Webscraping and creating credit card numbers using R"
+excerpt: "Creating credit card numbers in R"
 project: true
 ---
 
