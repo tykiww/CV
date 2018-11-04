@@ -70,8 +70,10 @@ Personal
 
 **Technical**
 
-### Technical
+
 ------
+
+### Technical
 
 1. R (Advanced)
 1. Python 3 (Intermediate)
