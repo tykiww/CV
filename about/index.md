@@ -73,11 +73,11 @@ Personal
 
 
 ------
-| . | . | . |
-|--------------|----------------|------------------|
-| **R (Advanced)** | **Python 3 (Int)** | **SAS (Proc SQL)** |
-| **STATA** | **Weka** | **Spark (Pyspark)** |
-| **Salesforce** | **Alteryx** | **Google Analytics** |
+| ...               | ....           | ....             |
+|--------------     |----------------|------------------|
+| **R (Advanced)**  | **Python 3 (Int)** | **SAS (Proc SQL)** |
+| **STATA**         | **Weka**       | **Spark (Pyspark)** |
+| **Salesforce**    | **Alteryx**    | **Google Analytics** |
 
 
 
