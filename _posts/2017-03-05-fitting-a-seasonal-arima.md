@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Seasonal Time Series in ARIMA"
-image: ""
+image: "https://tykiww.github.io/img/arima12/ener2.png"
 date:   2017-03-05
 excerpt: "Seasonal ARIMA using R"
 project: true
