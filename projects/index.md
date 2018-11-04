@@ -1,6 +1,6 @@
 ---
 layout: project
-title: All Projects
+title: Project Highlights
 excerpt: "A List of Projects (Optimized for mobile only)"
 ---
 
