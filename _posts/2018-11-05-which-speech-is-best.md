@@ -21,7 +21,7 @@ Our goal is to create our own speaker session by discovering which topics are th
 
 Here are the libraries to use for today.
 
-```{r}
+```r
 library("tidyverse")
 library("glmnet")
 library("plotly")
@@ -30,7 +30,7 @@ library("plotmo")
 
 To figure out what type of analysis to run, let's take a `glimpse` into our data (if you're not interested in the data and just into how to run the model with the parameters, keep scrolling down).
 
-```{r}
+```r
 ted <- read.csv('ted.csv', stringsAsFactors=FALSE) %>% as.tibble # same as read_csv
 glimpse(ted)
 ```
@@ -66,7 +66,7 @@ Alright, we are good to go.
 
 The way we analyze the model will be to use predictor variables of comments, durations, number of speakers, tag data, and ratings data against our total viewership. I've manipulated the information so we will be able to run it straight away. If you're curious about how the [data](https://raw.githubusercontent.com/tykiww/projectpage/master/datasets/Ted/lasso_ready.csv) was cleaned up, take a look at the code [here](https://raw.githubusercontent.com/tykiww/projectpage/master/Uncataloged-R-Projects/tedclean.R).
 
-```{r}
+```r
 # load the clean dataset.
 paths <- "https://raw.githubusercontent.com/tykiww/projectpage/master/datasets/Ted/lasso_ready.csv"
 lasso_part <- read_csv(paths)
@@ -74,20 +74,20 @@ lasso_part <- read_csv(paths)
 
 Lasso in R only takes matrix X's and a vector for the predictor. In python, you'll have to standardize the x values as mu = 0 and sd = 1. However, R takes care of that for us. We'll just stick it into their own matrices.
 
-```{r}
+```r
 x <- model.matrix(views ~ ., data = lasso_part)[,-1]
 y <- lasso_part$views
 ```
 
 Now the formula is simple. All we need is to stick it in this line of code. 
 
-```{r}
+```r
 gmlnet(x,y,lambda)
 ```
 
 Now to find the best lambda, we will need to cross validate using the lowest error. We will choose the root mean squared error to standardize on near values. There is always a better way. Actually, `cv.glmnet` already cross validates for you without having to loop anything. However, I am a little wary of this unsupervised technique, so we will compare our errors manually. Also, note that we could have chosen more values for lambda if we desired (more than just 200), however for the sake of validation we will keep it this way.
 
-```{r}
+```r
 # Using cross validation to determine optimal lambda
 k <- 3
 set.seed(15)
@@ -113,7 +113,7 @@ for (l in possible_lambdas) {
 
 Let's plot out our potential lambdas and their rpmses.
 
-```{r}
+```r
 # Looking at potential lambda values and associated rpmse
 a <- data.frame("lambda" = possible_lambdas, "rpmse" = lambda_rpmses) %>%
   ggplot(aes(lambda, rpmse)) +
@@ -126,7 +126,7 @@ ggplotly(a)
 
 We notice here that the best lambda value is 160, minimizing our error at the optimal rate. We'll stick that back in and view our most important coefficients.
 
-```{r}
+```r
 # Getting the alpha that minimizes rpmse
 best_lambda <- possible_lambdas[which.min(lambda_rpmses)]
 
@@ -136,7 +136,7 @@ lasso_model <- glmnet(x[train_rows,], y[train_rows], lambda = best_lambda)
 
 With a lambda of 160 (log lambda of 5.075), here is what our variable trace chart will look like.
 
-```{r}
+```r
 plot(cv.glmnet(x,y)$glmnet.fit,"lambda",label = TRUE)
 ```
 
@@ -149,7 +149,7 @@ It is keeping many of the variables with only lambda of 200. However, we will se
 
 Now here is our most influential tags. (10 best or worst)
 
-```{r}
+```r
 x1 <- rownames(coef(lasso_model))
 x2 <- as.vector(coef(lasso_model))
 det <- cbind("coefficient" = x1,"value" = abs(x2)) %>% 
@@ -175,7 +175,7 @@ arrange(det, .bygroup = desc(as.numeric(value))) %>%
 
 Here is our top 10 best tags that influence viewership.
 
-```{r}
+```r
 # best 10 tags
 arrange(des, .bygroup = desc(as.numeric(value))) %>%
   head(10)
@@ -196,7 +196,7 @@ arrange(des, .bygroup = desc(as.numeric(value))) %>%
 
 Here is our worst 10 tags that influence viewership.
 
-```{r}
+```r
 # worst 10 tags
 arrange(des, .bygroup = as.numeric(value)) %>%
   head(10)
@@ -216,7 +216,7 @@ arrange(des, .bygroup = as.numeric(value)) %>%
 
 Finally, the tags that had no influence
 
-```{r}
+```r
 # Useless tags.
 subset(des,des$value==0)
 ```
