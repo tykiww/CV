@@ -2,7 +2,7 @@
 layout: post
 title:  "Let's use some Google Maps"
 image: "https://tykiww.github.io/assets/googmap/1.png"
-date:   2018-03-05
+# date:   2018-03-05
 excerpt: "Connecting with the Google Maps API in R"
 project: true
 ---
