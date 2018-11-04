@@ -4,6 +4,7 @@ title: Resume
 tags: 
 # date:
 ---
+
 Tyki Wada
 ============
 
@@ -73,17 +74,18 @@ Personal
 
 ------
 
-### Technical
+<ol>
+<li>R (Advanced)</li>
+<li>Python 3 (Intermediate)</li>
+<li>SAS (Proc SQL)</li>
+<li>Weka</li>
+<li>Spark (Pyspark)</li>
+<li>Matlab</li>
+<li>Salesforce<br><br></li>
+<li>Alteryx</li>
+<li>Google Analytics</li>
+</ol>
 
-1. R (Advanced)
-1. Python 3 (Intermediate)
-1. SAS (Proc SQL)
-1. Weka
-1. Spark (Pyspark)
-1. Matlab
-1. Salesforce
-1. Alteryx
-1. Google Analytics
 
 ------
 
