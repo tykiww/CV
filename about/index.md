@@ -81,6 +81,36 @@ Personal
 
 
 
+<body>
+
+<h2>Basic HTML Table</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>...</th>
+    <th>...</th>
+    <th>...</th>
+  </tr>
+  <tr>
+    <td>R (Advanced)</td>
+    <td>Python (Int)</td> 
+    <td>SAS (Proc SQL)</td>
+  </tr>
+  <tr>
+    <td>STATA</td>
+    <td>Weka</td>
+    <td>Spark (Pyspark)</td>
+  </tr>
+  <tr>
+    <td>Salesforce</td>
+    <td>Alteryx</td>
+    <td>Google Analytics</td>
+  </tr>
+
+</table>
+
+</body>
+
 ------
 
 
