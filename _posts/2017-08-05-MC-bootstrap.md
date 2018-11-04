@@ -2,7 +2,7 @@
 layout: post
 title:  "Monte Carlo Methods: Bootstrapping"
 image: "http://needtoknow.nas.edu/energy/media/media_browser_uploads/images/item_1_.jpg"
-date:   2017-08-05
+# date:   2017-08-05
 excerpt: "Bootstrapping in R"
 project: true
 ---
