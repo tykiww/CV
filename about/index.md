@@ -73,24 +73,16 @@ Personal
 
 
 ------
-| ...               | ....           | ....             |
-|--------------     |----------------|------------------|
-| **R (Advanced)**  | **Python 3 (Int)** | **SAS (Proc SQL)** |
-| **STATA**         | **Weka**       | **Spark (Pyspark)** |
-| **Salesforce**    | **Alteryx**    | **Google Analytics** |
-
-
 
 <body>
-
-<h2>Basic HTML Table</h2>
-
 <table style="width:100%">
+  <!--
   <tr>
     <th>...</th>
     <th>...</th>
     <th>...</th>
   </tr>
+-->
   <tr>
     <td>R (Advanced)</td>
     <td>Python (Int)</td> 
