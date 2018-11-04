@@ -75,6 +75,7 @@ Personal
 ------
 
 <ol>
+    
 <li>R (Advanced)</li>
     
 <li>Python 3 (Intermediate)</li>
