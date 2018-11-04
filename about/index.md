@@ -5,7 +5,7 @@ tags:
 # date:
 ---
 
-<center>Tyki Wada</center>
+<center><bold>Tyki Wada</bold></center>
 ============
 
 <center>Address, email, phone number, and other contact upon request.</center>
@@ -76,14 +76,23 @@ Personal
 
 <ol>
 <li>R (Advanced)</li>
+    
 <li>Python 3 (Intermediate)</li>
+
 <li>SAS (Proc SQL)</li>
+
 <li>Weka</li>
+
 <li>Spark (Pyspark)</li>
+
 <li>STATA</li>
+
 <li>Salesforce<br><br></li>
+
 <li>Alteryx</li>
+
 <li>Google Analytics</li>
+
 </ol>
 
 
