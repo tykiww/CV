@@ -24,8 +24,8 @@ sass:
 # Social
 # if you don't have any of social below, comment the line.
 #email:
-twitter: username
-facebook: username
+# twitter: username
+# facebook: username
 #google:
   #plus: #username
   #analytics:
@@ -35,16 +35,16 @@ facebook: username
 #bing-verify:
 github: tykiww
 stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-linkedin: username
+linkedin: taiki-wada
 #xing: username
-instagram: username
-lastfm: username
-tumblr: username
+# instagram: username
+# lastfm: username
+# tumblr: username
 #pinterest: username
 #foursquare: username
-steam: username
+# steam: username
 #dribbble: username
-youtube: username
+# youtube: username
 #soundcloud: username
 #weibo: username
 #flickr: username
