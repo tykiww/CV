@@ -2,7 +2,7 @@
 layout: post
 title:  "Dynamic Pricing: Chocolate"
 image: "https://tykiww.github.io/assets/dynamic%20pricing/3.png"
-date:   2018-05-05
+# date:   2018-05-05
 excerpt: "Dynamic Pricing Model in R"
 project: true
 ---
