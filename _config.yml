@@ -26,9 +26,9 @@ sass:
 #email:
 # twitter: username
 # facebook: username
-#google:
+google:
   #plus: #username
-  #analytics:
+  analytics: "UA-116220649-1"
   #verify:
   #ad-client:
   #ad-slot:
@@ -57,7 +57,7 @@ linkedin: taiki-wada
 
 
 # Comments
-disqus_shortname: alperenbozkurt-net
+disqus_shortname: tykiww-github-io
 
 
 # Gems
