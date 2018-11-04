@@ -73,7 +73,7 @@ Personal
 
 
 ------
-| | | |
+| . | . | . |
 |--------------|----------------|------------------|
 | **R (Advanced)** | **Python 3 (Int)** | **SAS (Proc SQL)** |
 | **STATA** | **Weka** | **Spark (Pyspark)** |
