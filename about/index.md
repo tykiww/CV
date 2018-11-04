@@ -8,7 +8,7 @@ tags:
 Tyki Wada
 ============
 
-Address, email, phone number, and other contact upon request.
+<center>Address, email, phone number, and other contact upon request.</center>
 
 
 Education
