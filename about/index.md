@@ -80,7 +80,7 @@ Personal
 <li>SAS (Proc SQL)</li>
 <li>Weka</li>
 <li>Spark (Pyspark)</li>
-<li>Matlab</li>
+<li>STATA</li>
 <li>Salesforce<br><br></li>
 <li>Alteryx</li>
 <li>Google Analytics</li>
