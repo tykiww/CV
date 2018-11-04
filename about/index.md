@@ -13,6 +13,7 @@ tags:
 
 Education
 ---------
+<hr>
 
 2007-2010
 :   **BS, Statistics and Analytics**; Brigham Young University (Provo, UT)
@@ -22,6 +23,8 @@ Education
 
 Experience
 ----------
+
+<hr>
 
 **Summer Business Data Analyst : [Franklin Covey](https://www.franklincovey.co.jp/) (Tokyo, Japan) : May 2018 – Aug 2018**
 
@@ -51,6 +54,8 @@ Experience
 Volunteer
 ----------
 
+<hr>
+
 **President : [Japanese Student Association](byujsa.com) : Jun 2017 – Present**
 
 * Helped found and lead a team of 10 students, achieved membership of 50, and unique attendance of 300 in 3 months
@@ -63,6 +68,9 @@ Volunteer
 
 Personal
 ----------
+
+<hr>
+
 **Awards and Publications**
 
 * Article: [A Meta-Analytic Test of (...) Burnout and Engagement](https://doi.org/10.1016/j.burn.2017.05.003)*
@@ -70,9 +78,6 @@ Personal
 * Achieved: Eagle Scout
 
 **Technical**
-
-
-------
 
 <body>
 <table style="width:100%">
