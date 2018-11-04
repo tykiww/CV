@@ -2,7 +2,7 @@
 layout: post
 title:  "Too much data, what do I do?"
 image: "https://tykiww.github.io/img/step/step8.png"
-date:   2017-12-05
+# date:   2017-12-05
 excerpt: "Stepwise Regression in R"
 project: true
 ---
