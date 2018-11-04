@@ -28,7 +28,7 @@ Experience
 **Statistics TA (R, Analysis of Variance) ; [BYU](https://statistics.byu.edu/) (Provo, UT); Dec 2017 – Apr 2018, Dec 2019 - Present**
 
 * Supported Professor in administrating instruction to 2 classes of 40 students with a team of 5 other assistants
-* Engaged 80 students in coding difficult statistical concepts: ie. Monte-Carlo, permutations, bootstrap, hypothesis testing...
+* Engaged 80 students in coding difficult statistical concepts: ie. Monte-Carlo, permutations, bootstrap, hypothesis testing ...
 * Cut expected work time by 80% by creating a web-scraper/macro to speed up grading process
 **Summer Business Data Analyst ; [Franklin Covey](https://www.franklincovey.co.jp/) (Tokyo, Japan) ; May 2018 – Aug 2018**
 
