@@ -3,5 +3,36 @@ layout: page
 title: "404 Not Found"
 permalink: /404
 ---
-<p>There doesn't appear to be anything here. Sorry about that.</p>
-<p>If you've followed a link expecting something to be here, you can <a href="mailto:{{ site.email }}?subject=Page%20not%20found">contact me</a>.</p>
+<script src="https://rawgit.com/WeiChiaChang/Easter-egg/master/easter-eggs-collection.js"></script>
+<script src="js/jasmine.js"></script>
+<div class="text-center">
+  <h1>(404 error) This page doesn't exist! </h1>
+  <h1>
+<script>
+    var sites = [
+        'https://tykiww.github.io/2017-07-05-luhn-with-rvest/',
+        'https://tykiww.github.io/2018-05-05-Dynamic-Chocolate-Pricing/',
+        'https://tykiww.github.io/2017-04-05-rf-model/',
+        'https://tykiww.github.io/2017-03-05-fitting-a-seasonal-arima/',
+        'https://tykiww.github.io/2018-02-05-SL-theory/',
+        'https://tykiww.github.io/2017-09-05-BFE/',
+        'https://tykiww.github.io/2018-08-05-Mass-Emails/',
+        'https://tykiww.github.io/2018-09-05-shiny-breakeven/',
+        'https://tykiww.github.io/2018-10-05-2018-Same-Initials/'
+    ];
+
+    function randomSite() {
+        var i = parseInt(Math.random() * sites.length);
+        location.href = sites[i];
+    }
+</script>
+<font color="#0085a1"><span title="I promise it works"><a1 href="#" onclick="randomSite();"><u>Click Here</u></a1></span></font> to go to a random blog post!</h1>
+  <br/>
+ 
+<p></p>
+  <img src="{{ site.baseurl }}/img/sorry.gif" />
+</div>
+<div class="text-center">
+  <h1>Any Complaints? Send me a note.</h1>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc2SngnqnI_c--X0yhQrerCvHW_Fel1OzOFsPIjv7-t8V73Xw/viewform?embedded=true" width="800" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+</div>
