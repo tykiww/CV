@@ -25,7 +25,7 @@ Experience
 
 <hr>
 
-**Statistics TA (R, Analysis of Variance) ; [BYU](https://statistics.byu.edu/) (Provo, UT); Dec 2017 – Apr 2018, Dec 2019 - Present**
+**Statistics TA (R, Analysis of Variance) ; [BYU](https://statistics.byu.edu/) (Provo, UT); Dec 2017 – Apr 2018, Recommence Dec 2019 **
 
 * Supported Professor in administrating instruction to 2 classes of 40 students with a team of 5 other assistants
 * Engaged 80 students in coding difficult statistical concepts: ie. Monte-Carlo, permutations, bootstrap, hypothesis testing ...
