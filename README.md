@@ -1,3 +1,3 @@
 # CV 
 
-https://tykiww.github.io
+https://tykiww.github.io/CV
