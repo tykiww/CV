@@ -15,7 +15,7 @@ Education
 ---------
 <hr>
 
-**BS, Statistics and Analytics** ; Brigham Young University (Provo, UT) ; April 2020
+**BS Statistics and Analytics** ; Brigham Young University (Provo, UT) ; April 2020
     
 * BYU Research Representative: Organizational Behavior research assistant from BYU at Tokyo University˚
 
