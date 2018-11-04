@@ -5,7 +5,7 @@ tags:
 # date:
 ---
 
-Tyki Wada
+<center>Tyki Wada</center>
 ============
 
 <center>Address, email, phone number, and other contact upon request.</center>
