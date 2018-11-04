@@ -16,9 +16,9 @@ Education
 <hr>
 
 
-:   **BS, Statistics and Analytics**; Brigham Young University (Provo, UT) ; April 2020
+**BS, Statistics and Analytics** ; Brigham Young University (Provo, UT) ; April 2020
     
-    *BYU Research Representative: Organizational Behavior research assistant from BYU at Tokyo University* *
+* BYU Research Representative: Organizational Behavior research assistant from BYU at Tokyo University˚
 
 
 Experience
@@ -72,7 +72,7 @@ Personal
 
 **Awards and Publications**
 
-* Article: [A Meta-Analytic Test of (...) Burnout and Engagement](https://doi.org/10.1016/j.burn.2017.05.003)*
+* Article: [A Meta-Analytic Test of (...) Burnout and Engagement](https://doi.org/10.1016/j.burn.2017.05.003)˚
 * Analytics Blog: www.inform-analytics.com
 * Achieved: Eagle Scout
 
