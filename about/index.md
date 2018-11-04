@@ -4,12 +4,11 @@ title: Resume
 tags: 
 # date:
 ---
-Johnny Coder
+Tyki Wada
 ============
 
------------------------------------------------
 Address, email, phone number, and other contact upon request.
------------------------------------------------
+
 
 Education
 ---------
@@ -73,6 +72,7 @@ Personal
 
 ### Technical
 ------
+
 1. R (Advanced)
 1. Python 3 (Intermediate)
 1. SAS (Proc SQL)
@@ -82,6 +82,7 @@ Personal
 1. Salesforce
 1. Alteryx
 1. Google Analytics
+
 ------
 
 
