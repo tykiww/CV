@@ -2,7 +2,7 @@
 layout: post
 title:  "Let's scrape Amazon with RSelenium"
 image: "https://tykiww.github.io/assets/selenium/3.png"
-date:   2018-04-05
+# date:   2018-04-05
 excerpt: "Scraping Amazon with RSelenium in R"
 project: true
 ---
