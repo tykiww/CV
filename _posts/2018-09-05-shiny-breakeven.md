@@ -2,7 +2,7 @@
 layout: post
 title:  "Simple Breakeven Analysis Using Shiny"
 image: "https://raw.githubusercontent.com/tykiww/tykiww.github.io/master/img/br-shiny/breakevens.png"
-date:   2018-09-05
+# date:   2018-09-05
 excerpt: "Breakeven Analysis in Shiny using R"
 project: true
 ---
