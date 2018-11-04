@@ -30,6 +30,7 @@ Experience
 * Supported Professor in administrating instruction to 2 classes of 40 students with a team of 5 other assistants
 * Engaged 80 students in coding difficult statistical concepts: ie. Monte-Carlo, permutations, bootstrap, hypothesis testing ...
 * Cut expected work time by 80% by creating a web-scraper/macro to speed up grading process
+
 **Summer Business Data Analyst ; [Franklin Covey](https://www.franklincovey.co.jp/) (Tokyo, Japan) ; May 2018 – Aug 2018**
 
 * Constructed over 15 custom dashboards for the President, Representatives, and Sales Partners through Shiny in R
