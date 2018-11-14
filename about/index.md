@@ -6,7 +6,6 @@ tags:
 ---
 
 <center><h1><b>Tyki Wada</b></h1></center>
-<center>============</center>
 
 <center>Address, email, phone number, and other contact upon request in comments or message portal</center>
 
