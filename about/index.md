@@ -3,11 +3,12 @@ layout: page
 title: Resume
 tags: 
 # date:
+# <center>Address, email, phone number, and other contact upon request in comments or message portal</center>
 ---
 
 <center><h1><b>Tyki Wada</b></h1></center>
 
-<center>Address, email, phone number, and other contact upon request in comments or message portal</center>
+
 
 
 Education
