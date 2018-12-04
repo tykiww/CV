@@ -77,8 +77,9 @@ Personal
 * Achieved: Eagle Scout
 
 **Technical**
-<center>
+
 <body>
+<center>
 <table style="width:100%">
   <!--
   <tr>
@@ -104,11 +105,11 @@ Personal
   </tr>
 
 </table>
-
-</body>
 </center>
-------
+</body>
 
+------
+<p> </p>
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc2SngnqnI_c--X0yhQrerCvHW_Fel1OzOFsPIjv7-t8V73Xw/viewform?embedded=true" width="800" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
