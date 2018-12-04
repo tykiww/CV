@@ -77,7 +77,7 @@ Personal
 * Achieved: Eagle Scout
 
 **Technical**
-
+<center>
 <body>
 <table style="width:100%">
   <!--
@@ -106,7 +106,7 @@ Personal
 </table>
 
 </body>
-
+</center>
 ------
 
 
