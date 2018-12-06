@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Which Speech is Best?"
+title:  "Which Speech is the Best?"
 image: "https://tykiww.github.io/img/lasso/two.png"
 # date:   2018-11-05
 excerpt: "Running a Lasso Regression with TED talks in R"
