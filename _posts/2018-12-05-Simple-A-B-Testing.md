@@ -3,7 +3,7 @@ layout: post
 title:  "Simple A/B Testing"
 image: "https://tykiww.github.io/img/A-B/8.png"
 # date:   2018-12-05
-excerpt: "Marketing Analytics in R"
+excerpt: "A form of Marketing Analytics in R"
 project: true
 ---
 
