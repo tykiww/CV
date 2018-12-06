@@ -56,7 +56,7 @@ Volunteer
 
 <hr>
 
-**VP, President ; [Japanese Student Association](byujsa.com) ; May 2017 – Dec 2018**
+:: **VP, President ; [Japanese Student Association](byujsa.com) ; May 2017 – Dec 2018**
 
 * Helped found and lead a team of 10 students, achieved membership of 50, and unique attendance of 300 in 3 months
 * Increased sustainability by expanding channels of opportunities: Jobs, internship programs, mentorship, company visits
