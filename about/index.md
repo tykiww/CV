@@ -8,28 +8,19 @@ tags:
 
 <center><h1><b>Tyki Wada</b></h1></center>
 
-
-
-
-Education
----------
-<hr>
-
-:: **BS Statistics and Analytics** ; Brigham Young University (Provo, UT) ; April 2020
-    
-* BYU Research Representative: Organizational Behavior research assistant from BYU at Tokyo University˚
-
-
-Experience
+Current Positions
 ----------
 
 <hr>
 
-**Statistics TA (R, Analysis of Variance) ; [BYU](https://statistics.byu.edu/) (Provo, UT); Dec 2017 – Apr 2018,** **Recommence Dec 2018**
+** Statistics TA (R, Analysis of Variance) ; [BYU](https://statistics.byu.edu/) (Provo, UT); Dec 2017 – Apr 2018** 
 
-* Supported Professor in administrating instruction to 2 classes of 40 students with a team of 5 other assistants
-* Engaged 80 students in coding difficult statistical concepts: ie. Monte-Carlo, permutations, bootstrap, hypothesis testing ...
-* Cut expected work time by 80% by creating a web-scraper/macro to speed up grading process
+** Data Scientist (BYU Capstone) ; [Lawrence Livermore National Laboratories](https://lasers.llnl.gov/) (Provo, UT); Nov 2017 - Present**
+
+Past Experience
+----------
+
+<hr>
 
 **Summer Business Data Analyst ; [Franklin Covey](https://www.franklincovey.co.jp/) (Tokyo, Japan) ; May 2018 – Aug 2018**
 
@@ -50,12 +41,22 @@ Experience
 * Supported consultants in achieving their key indicators by bringing in 600 potential candidates
 
 
+Education
+---------
+<hr>
+
+:: **BS Statistics and Analytics** ; Brigham Young University (Provo, UT) ; April 2020
+    
+* BYU Research Representative: Organizational Behavior research assistant from BYU at Tokyo University˚
+* Data Science Club, American Statistical Association, Management consulting 
+
+
 Volunteer
 ----------
 
 <hr>
 
-**President ; [Japanese Student Association](byujsa.com) ; Jun 2017 – Present**
+**VP, President ; [Japanese Student Association](byujsa.com) ; May 2017 – Dec 2018**
 
 * Helped found and lead a team of 10 students, achieved membership of 50, and unique attendance of 300 in 3 months
 * Increased sustainability by expanding channels of opportunities: Jobs, internship programs, mentorship, company visits
@@ -89,7 +90,7 @@ Personal
   </tr>
 -->
   <tr>
-    <td>R (Advanced)</td>
+    <td>R (Adv)</td>
     <td>Python (Int)</td> 
     <td>SAS (Proc SQL)</td>
   </tr>
