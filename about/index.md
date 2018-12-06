@@ -13,9 +13,9 @@ Current Positions
 
 <hr>
 
-:: <b> Statistics TA (R, Analysis of Variance) ; [BYU](https://statistics.byu.edu/) (Provo, UT); Dec 2017 – Apr 2018<b> 
+:: <b> Statistics TA (R, Analysis of Variance) ; [BYU](https://statistics.byu.edu/) (Provo, UT); Dec 2017 – Apr 2018</b> 
 
-<b> Data Scientist (BYU Capstone) ; [Lawrence Livermore National Laboratories](https://lasers.llnl.gov/) (Provo, UT); Nov 2017 - Apr 2018<b>
+<b> Data Scientist (BYU Capstone) ; [Lawrence Livermore National Laboratories](https://lasers.llnl.gov/) (Provo, UT); Nov 2017 - Apr 2018</b>
 
 Past Experience
 ----------
