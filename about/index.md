@@ -13,7 +13,7 @@ Current Positions
 
 <hr>
 
-:: <b> Statistics TA (R, Analysis of Variance) ; [BYU](https://statistics.byu.edu/) (Provo, UT); Dec 2017 – Apr 2018</b> 
+:: <b> Statistics TA (R, Analysis of Variance) ; [Brigham Young University](https://statistics.byu.edu/) (Provo, UT); Dec 2017 – Apr 2018</b> 
 
 <b> Data Scientist (BYU Capstone) ; [Lawrence Livermore National Laboratories](https://lasers.llnl.gov/) (Provo, UT); Nov 2017 - Apr 2018</b>
 
@@ -45,7 +45,7 @@ Education
 ---------
 <hr>
 
-:: **BS Statistics and Analytics** ; Brigham Young University (Provo, UT) ; April 2020
+:: **BS Statistics and Analytics** ; [Brigham Young University](https://statistics.byu.edu/) (Provo, UT) ; April 2020
     
 * BYU Research Representative: Organizational Behavior research assistant from BYU at Tokyo University˚
 * Data Science Club, American Statistical Association, Management consulting 
