@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Simple Form A/B Testing"
+title:  "Simple Form Web A/B Testing"
 image: "https://tykiww.github.io/img/A-B/8.png"
 # date:   2018-12-05
 excerpt: "A form of Marketing Analytics in R"
