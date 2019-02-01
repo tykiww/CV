@@ -1,8 +1,5 @@
 
----
-layout: page
-title: About Tyki
----
+<h> Tyki Wada </h>
 
 
 <script src="js/jasmine.js"></script>
