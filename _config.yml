@@ -1,10 +1,10 @@
 # Site
 title:          Tyki Wada
 bio:            ''
-description:    "Online CV and Major Projects"
+description:    "Online Bio and Major Projects"
 picture:        'assets/img/profile2.png'
 locale:         en_US
-url:            https://tykiww.github.io/CV
+url:            https://tykiww.github.io/CVV/
 
 
 # Jekyll
