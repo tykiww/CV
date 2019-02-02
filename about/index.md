@@ -1,11 +1,9 @@
 
+![Caption: Happiness](https://raw.githubusercontent.com/tykiww/Images/master/family/goblin_valley.jpg?token=AjQRCg9y8nCZoYxHiA4sCeEHHYtV3cvMks5cXiR6wA%3D%3D)
 
-
-![](https://raw.githubusercontent.com/tykiww/Images/master/family/goblin_valley.jpg?token=AjQRCg9y8nCZoYxHiA4sCeEHHYtV3cvMks5cXiR6wA%3D%3D)
-
-
-<p>Currently, I am an undergraduate finishing a degree in Statistics and Analytics at <a href="https://www.byu.edu/">Brigham Young University</a>. The aim is to shoot the gap between <b>Business Strategy</b> and <b>Data Science</b>. When I'm not studying, I mostly enjoy ⚽futsal, reading, and spending time with my fiance.</p>
-
+Currently, I am an undergraduate finishing a degree in Statistics and Analytics at <a href="https://www.byu.edu/">Brigham Young University</a>. I have been blessed with tremendous opportunities working with [Lawrence Livermore National Laboratories](https://lasers.llnl.gov/), [Franklin Covey](https://www.franklincovey.com/), [University of Tokyo](https://www.u-tokyo.ac.jp/en/index.html), and participated in a couple startups.
+  
+The aim is to shoot the gap between <b>Business Strategy</b> and <b>Data Science</b>. When I'm not studying, I mostly enjoy ⚽futsal, reading, and spending time with my fiance.
 
 <p>　・<strong>Connect</strong> with me on <a href="https://www.linkedin.com/in/taiki-wada">LinkedIn</a>!</p>
 
