@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Clustering Techniques"
+title:  "Comparing Clustering Techniques"
 image: "https://camo.githubusercontent.com/524e5417cf698eacf6d9979267ce49f2e195682e/68747470733a2f2f74796b6977772e6769746875622e696f2f696d672f636c75737465726576616c2f666f75722e706e67"
 # date:   2019-02-05
-excerpt: "Experimenting with Algorithms"
+excerpt: "Experimenting with  More Algorithms"
 project: true
 ---
 
