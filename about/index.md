@@ -7,7 +7,7 @@ The aim is to shoot the gap between <b>Business Strategy</b> and <b>Data Science
 
 <p>　・<strong>Connect</strong> with me on <a href="https://www.linkedin.com/in/taiki-wada">LinkedIn</a>!</p>
 
-<p>　・<strong>Fork</strong> my github <a href="https://github.com/tykiww/projectpage">repository</a>.</p>
+<p>　・<strong>Fork</strong> my github <a href="https://github.com/tykiww">repositories</a>.</p>
 
 <p>　・<strong>View</strong> a <a href="https://doi.org/10.1016/j.burn.2017.05.003">Publication Project</a>.</p>
 
