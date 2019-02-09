@@ -1,5 +1,5 @@
 
-![Caption: Happiness](https://raw.githubusercontent.com/tykiww/Images/master/family/goblin_valley.jpg?token=AjQRCg9y8nCZoYxHiA4sCeEHHYtV3cvMks5cXiR6wA%3D%3D)
+![Caption: Happiness](https://raw.githubusercontent.com/tykiww/Images/master/family/goblin_valley.jpg)
 
 Currently, I am an undergraduate finishing a degree in Statistics and Analytics at <a href="https://www.byu.edu/">Brigham Young University</a>. I have been blessed with tremendous opportunities working with [Lawrence Livermore National Laboratories](https://lasers.llnl.gov/), [Franklin Covey](https://www.franklincovey.com/), [University of Tokyo](https://www.u-tokyo.ac.jp/en/index.html), and a couple startups.
   
