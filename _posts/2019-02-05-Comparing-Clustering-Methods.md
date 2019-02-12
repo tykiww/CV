@@ -169,7 +169,7 @@ hullplot(sets, iris.models[[2]], main = "k-means") # graphical representation of
 ```
 
 
-![](https://raw.githubusercontent.com/tykiww/tykiww.github.io/master/img/clustereval/one.png)
+![](https://raw.githubusercontent.com/tykiww/tykiww.github.io/master/img/clustereval/one.png?token=AjQRCvlEtM69Ui7eUyw-RSDMlfEVYzL_ks5cbJFbwA%3D%3D)
 
 I'm not going to show how close we were to the original dataset, however this method probably fits the best out of the 3 other algorithms.
 
