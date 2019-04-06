@@ -2,7 +2,9 @@
 layout: post
 title: "Market Basket Transaction Analysis"
 fb-img: https://tykiww.github.io/img/assoc-mining/arvizgify.gif
+excerpt: "What is bought with what?"
 comments: true
+project: true
 ---
 
 Who buys what and what with what? ... What?
