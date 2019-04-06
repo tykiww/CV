@@ -1,10 +1,13 @@
 ---
 layout: post
 title: "Decision Tree Recursive Partitioning"
-fb-img: https://unemamandanslaville.files.wordpress.com/2014/01/arbre-gc3a9nc3a9alogique.jpg
-tags:
+image: https://unemamandanslaville.files.wordpress.com/2014/01/arbre-gc3a9nc3a9alogique.jpg
+excerpt: "Which is the best car to buy?"
 comments: true
+project: true
 ---
+
+
 
 Recursive partitioning is rather intuitive.
 
