@@ -3,7 +3,7 @@
 
 Currently, I am an undergraduate finishing a degree in Statistics and Analytics at <a href="https://www.byu.edu/">Brigham Young University</a>. I have been blessed with tremendous opportunities working with [Lawrence Livermore National Laboratories](https://lasers.llnl.gov/), [Franklin Covey](https://www.franklincovey.com/), [University of Tokyo](https://www.u-tokyo.ac.jp/en/index.html), and a couple startups.
   
-The aim is to shoot the gap between <b>Business Strategy</b> and <b>Data Science</b>. When I'm not studying, I mostly enjoy ⚽futsal, reading, and spending time with my fiance.
+The aim is to shoot the gap between <b>Business Strategy</b> and <b>Data Science</b>. When I'm not studying, I mostly enjoy ⚽futsal, reading, and spending time with my wife.
 
 <p>　・<strong>Connect</strong> with me on <a href="https://www.linkedin.com/in/taiki-wada">LinkedIn</a>!</p>
 
