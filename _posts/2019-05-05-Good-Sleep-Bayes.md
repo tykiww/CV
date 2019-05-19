@@ -2,8 +2,12 @@
 layout: post
 title: "Is My Sleep Good enough?"
 fb-img: https://raw.githubusercontent.com/tykiww/tykiww.github.io/master/img/sleep/three.png?token=AI2BCCUIVWH2VFJTUGP5HJK45ME3A
+excerpt: "Bayesian Sleep Analysis"
 comments: true
+project: true
 ---
+
+
 
 How well do you usually sleep? The average adult gets about [7-9 hours](https://www.sleepfoundation.org/excessivesleepiness/content/how-much-sleep-do-we-really-need-0) of sleep. Does that feel like enought to you? 
 
