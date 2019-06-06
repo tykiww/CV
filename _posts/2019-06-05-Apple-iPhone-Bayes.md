@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Beta-Binomial Predictives with Return Rates"
+title: "Beta-Binomial Predictives (Return Rates)"
 fb-img: https://raw.githubusercontent.com/tykiww/tykiww.github.io/master/img/iphone/one.png?token=AI2BCCUSXXIDTO6WIHNLSL25ALMU2
 excerpt: "Return Rates"
 comments: true
