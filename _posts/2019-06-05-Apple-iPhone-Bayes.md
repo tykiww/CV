@@ -2,7 +2,7 @@
 layout: post
 title: "Beta-Binomial Predictives"
 fb-img: https://raw.githubusercontent.com/tykiww/tykiww.github.io/master/img/iphone/one.png?token=AI2BCCUSXXIDTO6WIHNLSL25ALMU2
-excerpt: "Return Rates"
+excerpt: "Return Rate Modelling"
 comments: true
 project: true
 ---
