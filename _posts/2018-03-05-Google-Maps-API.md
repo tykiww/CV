@@ -14,7 +14,8 @@ I was never a big fan of coding before I started studying statistics. I just avo
 
 Let's take a look at the object we're after.
 
-![](https://tykiww.github.io/assets/googmap/1.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/assets/googmap/1.png)
+
 
 This was created as a fun side project while packing up an summary report for one of my managers. I can't give too much detail other than how it locates a specific industry of clients that we service currently. As you can see, it is hosted locally on my disk, so it isn't very transferrable just like the plotly dashboards I created in the past (I'll hopefully get to raking out a solution for this someday).
 
@@ -31,11 +32,11 @@ We'll first begin by Accessing the Google API Service, then we'll get to downloa
 
 Make a quick trip to this link [here](https://console.developers.google.com/flows/enableapi?apiid=maps_backend,static_maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,roads,street_view_image_backend,maps_embed_backend,places_backend,geolocation,timezone_backend,maps_android_backend,maps_ios_backend,placesandroid,placesios&keyType=CLIENT_SIDE&reusekey=true). Notice that this link won't work without already being logged in with a google account. Please make sure to do this beforehand. 
 
-![](https://tykiww.github.io/assets/googmap/2.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/assets/googmap/2.png)
 
 Click the continue button under the dropdown menu "Create a Project". It will take a while to load, but you'll see this screen:
 
-![](https://tykiww.github.io/assets/googmap/3.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/assets/googmap/3.png)
 
 Type whatever name you like, but make sure to specify "HTTP referrers" as one of the application restricters. Include afterwards (localhost:*) to be one of the request locations so you won't get blocked when running this in your console. 
 
@@ -69,7 +70,7 @@ glimpse(libs)
 
 ```
 
-![](https://tykiww.github.io/assets/googmap/4.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/assets/googmap/4.png)
 
 It seems like we have some good information giving us the location, location type, position, and state. Let's filter out some of these variables.
 
@@ -95,7 +96,7 @@ table(sub$State) %>% as.vector %>% hist
 table(sub$State) %>% as.vector %>% summary
 ```
 
-![](https://tykiww.github.io/assets/googmap/5.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/assets/googmap/5.png)
 
     ## Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
     ##  1.0     3.0     8.0    12.7    17.5    74.0 
@@ -130,7 +131,7 @@ apikey <- paste(api,key,sep = "") # combine key and site location.
 b <- plotGoogleMaps(lonlat, api = apikey)
 ```
 
-![](https://tykiww.github.io/assets/googmap/6.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/assets/googmap/6.png)
 
 This is actually pretty comical as it doesn't really explain anything, but it is a rather useful tool in getting a good snapshot view of what you're looking for. It seems like the most populated locations are in Kentucky, California, Ohio, and South Carolina. They seem to be the most dense and closely packed. Now your manager is happy and you are good to go (:.
 
