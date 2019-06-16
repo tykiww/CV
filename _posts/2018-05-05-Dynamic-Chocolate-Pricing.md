@@ -10,6 +10,8 @@ project: true
 
 Here's a hypothetical situation we can whip up: As an international wholesale retail owner of a particular chocolate brand, your goal is to map the optimum price for your world-famous candy bar using historical data. You have collected data on the past years' price changes along with quantity information in response to these price adjustments. What will you do?
 
+A bit of econometrics wouldn't hurt to try. 
+
 ![](https://collectiveinnovation.com/wp-content/uploads/2016/02/Dynamic-Pricing.png)
 
 Dynamic pricing is an extremely complex subject. So much so, it hurts to wrap my head around. There are so many different approaches when it comes to optimization. We want it just right!
@@ -64,7 +66,7 @@ ggplot(raw, aes(price, quantity)) +
   ggtitle('Chocolate Demand')
 ```
 
-[](https://tykiww.github.io/assets/dynamic%20pricing/1.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/assets/dynamic%20pricing/1.png)
 
 We can now create a demand curve function using the information we have that will help us with forecasting our historical demand. It's pretty easy from just modeling our regression equation. Since we are creating a random normal distribution of errors, we also need to make sure to set our seed.
 
@@ -130,7 +132,8 @@ ggplot(views, aes(Period, Daily.Revenue, colour = 'Historical Revenue')) +
   labs(title = '365 Day Performance', colour = '')
 ```
 
-![](https://tykiww.github.io/assets/dynamic%20pricing/2.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/assets/dynamic%20pricing/2.png)
+
 
 We can definitely see the randomness! I don't think any company actually works like this. Some of the revenue on these days are so low. Pretty surreal situation, but anything is possible. It would have been nice to have real data as that would model the business setting. Regardless, we have a balance here.
 
@@ -187,7 +190,7 @@ ggplot(data = data.frame(Price = 0)) +
   scale_color_manual(name = "", values = c("True Revenue" = 2, "True Profit" = 3, "Estimated Revenue" = 4, "Estimated Profit" = 6)) 
 ```
 
-![](https://tykiww.github.io/assets/dynamic%20pricing/3.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/assets/dynamic%20pricing/3.png)
 
 We observe: Our estimated profits for chocolates are extremely close to our historical true profits! According to the timeseries model, this next year's profits will probably be slightly higher than our past 'true profits'. In this case, we would set our prices in between 4-5 dollars for the candy bar (what an expensive piece of candy!). It seems, due to the elasticity of demand, that it is in our favor to raise the price higher than what our current profits show as our new estimates will supposedly yield higher revenue and higher profits!
 
