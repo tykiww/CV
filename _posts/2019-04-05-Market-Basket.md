@@ -80,7 +80,7 @@ itemFrequencyPlot(mba,topN = 10,type = "absolute", main = "Item Frequency (Absol
 par(mfrow = c(1,1))
 ```
 
-![](https://raw.githubusercontent.com/tykiww/tykiww.github.io/master/img/assoc-mining/one.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/assoc-mining/one.png)
 
 Moving on to our model, we will use the function `apriori()` to fit our data with some parametrs. The most important ones are: 
 
@@ -154,6 +154,7 @@ plot(spected, method = "graph",  engine = "htmlwidget")
 ```
 
 ![](https://tykiww.github.io/img/assoc-mining/arvizgify.gif)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/assoc-mining/arvizgify.gif)
 
 We can play around with the different rules and products. The most connected rule leads to bread. It makes sense as the most ubiquitous. Play around with the widget and see what you can discover. 
 
@@ -201,9 +202,5 @@ Cheese seemed to be highly associated with the above combinations.
 In the end, we should remember that practical datasets will involve larger volume and much specific metrics (gini, J-measure, mutual info, etc.). In certain contexts, even confidence will not work as the best metric with the possibility of underestimating indicidual characteristics. Furthermore, we must choose carefully our metrics whether the data is dependent or independent.
 
 Regardless, here is another device for your toolkit. Have fun with it!
-
-
-
-
 
 
