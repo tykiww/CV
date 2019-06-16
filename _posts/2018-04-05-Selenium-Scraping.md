@@ -40,7 +40,7 @@ url <- "https://google.com/ncr"
 browse$navigate(url)
 ```
 
-![](https://tykiww.github.io/assets/selenium/1.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/assets/selenium/1.png)
 
 One important aspect to note is unique ability of Selenium to act as if we are actually pointing and clicking on the information, so sites will not suspect us to be 'bots'. Even when we are automating any searches, we won't be knocked out for 'suspicious activity'. 
 
@@ -61,7 +61,7 @@ name <- "Walmart"
 wxbox$sendKeysToElement(list(name))
 ```
 
-![](https://tykiww.github.io/assets/selenium/2.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/assets/selenium/2.png)
 
 You'll notice immediately that the screen will start to type on it's own and work just like you were online (You can also see what is trending with 'Walmart' ahaha).
 
@@ -76,7 +76,7 @@ browse$findElement(using = 'css selector', value = "span input")$clickElement()
 
 I've hit the jackpot with odd search items. The Florida man jailed story says, "Florida man jailed for stealing $1.16 worth of doughnuts from Walmart, deputies say". No comment.
 
-![](https://tykiww.github.io/assets/selenium/3.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/assets/selenium/3.png)
 
 You can also pull out specific images or text from the page. This will usually require an xpath for ease. I have already gone and grabbed it, but if you are curious how to pull out the xpath, take a look at one of my older [posts](https://tykiww.github.io/2017-02-05-SLR-Plotly/).
 
@@ -96,7 +96,7 @@ item1 <- industry$getElementText()[[1]][1]
 item2 <- explanation$getElementText()[[1]][1]
 ```
 
-![](https://tykiww.github.io/assets/selenium/4.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/assets/selenium/4.png)
 
 Pretty simple huh? I'll just finish by column binding the strings, then we have ourselves a mini-dataset.
 
@@ -117,7 +117,7 @@ Learning productivity comes at a cost for time, but ends up as a valuable invest
 
 This was just a simple introduction to Selenium. There are many more things you can do, but it's more fun to explore on your own!
 
-At the bottom you'll see how I use selenium to scrape a huge pile of customer review data on a specific cushion toilet seat from Amazon. I searched for the highest ratings to study why people like this particular brand, enough to find the most common reasons for loving their purchase. IF I happened to be creating the new top-selling 'super cushy toilet seat' I would love to know what kinds of preferences are out in the market. 
+At the bottom you'll see how selenium could be used to scrape a huge pile of customer review data on a specific cushion toilet seat from Amazon. I searched for the highest ratings to study why people like this particular brand, enough to find the most common reasons for loving their purchase. IF I happened to be creating the new top-selling 'super cushy toilet seat' I would love to know what kinds of preferences are out in the market. 
 
 ```r
 # Begin Driver
@@ -151,8 +151,5 @@ for ( i in 1:50) {
 ```
 
 Hope you enjoyed this post. Thank you for reading!
-
-
-
 
 
