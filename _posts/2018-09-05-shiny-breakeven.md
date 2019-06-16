@@ -32,8 +32,6 @@ Here, we will initially start with the Price-based option by looking at our comp
 barplot(c("$"=237,"$$"=165,"$$$"=1), col = "steel blue", xlab = "Price Range", ylab = "# Stores", main = "Yelp Sandwich Shop Market Estimation")
 ```
 
-![](1.png)
-
     $ : 237 : $8 (under 10)
     $$ : 165 : $18 (11-30)
     $$$: 1 : $42 (30-60)
