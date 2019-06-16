@@ -8,7 +8,6 @@ project: true
 ---
 
 
-
 Recursive partitioning is rather intuitive.
 
 ![](https://unemamandanslaville.files.wordpress.com/2014/01/arbre-gc3a9nc3a9alogique.jpg)
@@ -68,7 +67,8 @@ We must specify class here as every column is made up of factors. Other than tha
 rpart.plot(train.fit, extra = 104, trace = 1) # specify 104 for multiple classes..
 ```
 
-![](https://raw.githubusercontent.com/tykiww/tykiww.github.io/master/img/rpart1/one.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/rpart1/one.png)
+
 
 Unfortunately, it's really small. Even after tweaking the plot `cex` and limits, we notice how the graphics are insufficient. Hopefully, this feature will be added on in the future.
 
@@ -78,7 +78,7 @@ Alternatively, if we're not looking for something too rigorous, we have this.
 prp(fit,extra = 104)
 ```
 
-![](https://tykiww.github.io/img/rpart1/two.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/rpart1/two.png)
 
 We notice how intuitive this diagram is. Most people look for 4 person seats with high to medium safety. Depending on the price, we would naturally seek to optimize the maintenance and luggage space. It is also interesting to note the heiarchy of importance as seats, safety, and price are amongst the highest nodes. We also notice how some of these parameters are recursive as safety, price, and maintenance appears in multiple locations from top to bottom.
 
