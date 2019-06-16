@@ -19,17 +19,17 @@ In my opinion, Alteryx has tried a bit too hard to be an omni machine. Probably 
 
 Under the assumption that you are all ready and installed, we will begin. Take a look at our basic workflow.
 
-![](http://tykiww.github.io/img/alteryx/1.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/alteryx/1.png)
 
 We'll begin by dragging our "Text Input" node onto our workflow and put in some random numbers. I just chose to create variable a:j, 1:10, square it, then divide it by 3 (a bit mundane if you ask me, but let's pretend that the data already existed). This is a subsitute for regular data. I would much rather show you how to work R with a smaller dataset than with one that I already work with.
 
-![](http://tykiww.github.io/img/alteryx/2.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/alteryx/2.png)
 
 Next, I'll click on the developer pane. If you don't have it, just press the + button on the top right, and it will let you get the options (and if you don't even have that, you're screwed. Just kidding. Talk to your administrator and they can sort out permissions for you). Find the R tool, and drag it onto your workflow. Alternatively, you can just type "R tool" into the search bar and it will come up for you. 
 
 Make sure it matches with the node on the text input pane. Once you see the line connected, you're good to go. The #1 establishes the original connection and is deemed the connection "name", so when you call it out, you just need to reference the immediate datafile, then input "#1".
 
-![](http://tykiww.github.io/img/alteryx/3.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/alteryx/3.png)
 
 Now here comes the fun part (the R part is the fun part if you ask me). Inside our script console, we now have access to a blank R script. With it, we can basically use it to our leisure! The R module comes pre-packaged with a ton of libraries; tidyr, dplyr, ggplot2, [etc..](https://help.alteryx.com/9.5/Alteryx_Predictive_Analytics.htm) Even the outdated `zoo` package is contained in there. You're welcome to install more packages, but for the most case, you should be just fine. 
 
@@ -52,11 +52,11 @@ write.Alteryx( dat , 3 )
 
 Pretty simple stuff. Before you run the script (Ctrl + R), make sure to drag and drop the binoculars from you "favorites" tab.
 
-![](http://tykiww.github.io/img/alteryx/4.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/alteryx/4.png)
 
 Funny how it takes a bit longer for the code to run. Yet, I'm not complaining. They do a lot more work in the background than you may think.
 
-![](http://tykiww.github.io/img/alteryx/5.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/alteryx/5.png)
 
 Immediately pops up the new data we calculated into a new cell. If you click on the V5 tab, it will output a summary plot statistic that looks faintly like the `plotly` interface (cheeky, I am very sure it is). If you hover over the plots, it will give you details on which rows and columns it is truly referring to. Manipulate it how you like, it's very impressive.
 
@@ -64,7 +64,7 @@ One thing to point out, our 4th column is very wrong. If you noticed, the column
 
 A great point to note is how the summary statistics are already calculated for us. This neat tool is doing a lot of the background work for us, shaving off a lot of time.
 
-![](http://tykiww.github.io/img/alteryx/6.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/alteryx/6.png)
 
 So, it passed most of the 3 criterias. Of course, there are deeper applications to this that I have yet to show you, but it is important to note the useful nature of the integration. Now, for all you R users (and python for that matter), know that you are able to easily conquer this software with ease.
 
