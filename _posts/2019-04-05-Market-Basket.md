@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Market Basket Transaction Analysis"
-fb-img: https://tykiww.github.io/img/assoc-mining/arvizgify.gif
+title:  "Market Basket Transaction Analysis"
+image: "https://tykiww.github.io/img/boot/bootfix2.png"
+# date:   2017-08-05
 excerpt: "What is bought with what?"
-comments: true
 project: true
 ---
 
