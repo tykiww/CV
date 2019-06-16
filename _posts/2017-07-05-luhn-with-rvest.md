@@ -7,14 +7,15 @@ excerpt: "Creating credit card numbers in R"
 project: true
 ---
 
+_Webscraping with `Rvest` and investigating mod 10.
 
-_Webscraping with `Rvest` and investigating mod 10_
-
-So, I have this McDonalds app. Really convenient, especially for any hungry college student looking for ways to save money. Yet, there's a problem with my card. It just doesn't register with the app. How disappointing! Usually they have those 1 dollar deals to get any sandwich. **ANY SANDWICH**. That's my favorite one (This is in no way product placement, I'm just always hungry 笑).
+So, I have this McDonalds app. Really convenient, especially for any hungry college student looking for ways to save money. Yet, there's a problem with my card. It just doesn't register with the app. How disappointing! Usually they have those 1 dollar deals to get any sandwich. That's my favorite one (This is in no way a paid add, I'm just always ready for some cheap food 笑).
 
 ![](https://www.streetinsider.com/images/news2/139/13920358/LYNXNPEE271FK.jpg)
 
 Upon being frustrated at how my card didn't work, I tried to troubleshoot this problem on the internet. Unfortunately, I couldn't find any solutions, but I ended up finding something even more interesting. This was the mod 10 (modulus 10) or Luhn algorithm. This is an algorithm that is heavily used to generate credit card numbers and ID numbers. I guess it isn't safe to generate passwords because if someone found out every value except the last number of my card, I'd be screwed.
+
+### The Luhn Algorithm
 
 The rules are...
 
@@ -33,7 +34,9 @@ The rules are...
 
 The pseudo-code for this algorithm is right [here](https://en.wikipedia.org/wiki/Luhn_algorithm#Pseudo-Code). It's rather simple. You probably won't need it if you have the rules. 
 
-With this algorithm, I decided to make a credit card generator for some of the main credit networks (ie. Visa, Amex, MasterCard, etc.). I also hoped to incorporate some simple `rvest()` scraping to help you realize how easy it can be to scrape information from the web. 
+With this algorithm, I decided to make a credit card generator for some of the main credit networks (ie. Visa, Amex, MasterCard, etc.). `rvest()` scraping was also incorporated for some variety.
+
+### Data Scraping
 
 Let's get started by downloading the only necessary library. The rest will be performed in Base R. 
 
@@ -43,21 +46,21 @@ library(rvest)
 
 The only place I could find useful information about typical credit network values was on [wikipedia](https://en.wikipedia.org/wiki/Payment_card_number#Major_Industry_Identifier_.28MII.29). The table I want to retrieve looks like this. 
 
-![](https://tykiww.github.io/img/luhn/luhn1.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/luhn/luhn1.png)
 
 Before we read anything in, let's grab the xpath from our inspect element of the table. Right click on your chrome or firefox window on the page and select "inspect". This will pull up a sidebar that shows us the html, css, and other properties in the window.  
 
-![](https://tykiww.github.io/img/luhn/luhn2.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/luhn/luhn2.png)
 
 From there, start clicking on the html elements that highlight the specific portions of the page. If you do it well, it will narrow down so you only have the table showing up.
 
-![](https://tykiww.github.io/img/luhn/luhn3.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/luhn/luhn3.png)
 
 Once you get to the portion that highlights the desired table (usually in between the section that specifies "<table...), just right click and copy the xtable value! This will make sure exact table you are searching for. 
 
-![](https://tykiww.github.io/img/luhn/luhn4.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/luhn/luhn4.png)
 
-Interesting huh? I guess we can apply this to so many other situations where we are scanning and grabbing lots of information from many pages. It's also possible to search multiple volumes of values on google from rvest and compile data from multiple sources not on one page. I'll show you how to use `selenium` to do something like that. 
+Interesting huh? I guess we can apply this in many other situations where we are scanning and grabbing lots of information from many pages. It's also possible to search multiple volumes of values on google from rvest and compile data from multiple sources not on one page. This will be shown on a [future](https://tykiww.github.io/2018-04-05-Selenium-Scraping/) post using `rselenium`.
 
 Now that we have that out of the way, let's use the information we need to scrape the table.
 
@@ -80,7 +83,7 @@ credit <- credit[[1]] # first list element.
 head(credit)
 ```
 
-![](https://tykiww.github.io/img/luhn/luhn5.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/luhn/luhn5.png)
 
 Now I'll just clean up the information really quick. This one shouldn't be too difficult.
 
@@ -91,7 +94,7 @@ annoying <- function(x) {
 }
 
 credit <- sapply(credit, function(x) annoying(x) )
-# only columns of interest.
+# only columns of interest. Come on, dummy. Use the `dplyr::select()` function...
 networks <- credit[c(22,18,19,1,8,3,12,14),c(1:2,4)]
 ```
 
@@ -100,6 +103,8 @@ From here, I'm only going to pull out the Credit card networks that I want. I am
     ## Visa [22], Mastercard [18,19], Amex [1], Discover [8], UnionPay [3], JCB [12], Maestro [14].
   
 We'll put this portion aside for a bit and revisit it later.
+
+### Algorithm
 
 Let's just work on coding up the algorithm for now. Later, I'll show you how I used the information to create a credit card number generator given a specific network.
 
@@ -132,7 +137,7 @@ for (i in 1: length(odd)) {
 }
 ```
 
-Now we'll sum up the even and odd vector elements and multiply them by 9 to extract the check value. It is rather difficult to have to take numerical values and take specific values when they are random, so I decided just to use regex to determine the last value.
+Now we'll sum up the even and odd vector elements and multiply them by 9 to extract the check value. It is rather difficult to have to take numerical values and take specific values when they are random, so regex may be applied to determine the last value.
 
 ```r
 splitvec <- function(x) strsplit(gsub("(.)\\B","\\1 ",x), " ")[[1]]
@@ -145,8 +150,7 @@ check
 
     ## [1] 8
 
-Our check value seems to be 8!
-Finally, we can stick that value back on the original random sample we created.
+Our check value seems to be 8! We can stick that value back on the original random sample we created.
 
 ```r
 paste(c(base1,check), collapse = "")
@@ -155,6 +159,8 @@ paste(c(base1,check), collapse = "")
     ## [1] "391215822812658"
 
 Put this number through an [algorithm checker](https://planetcalc.com/2464/) site and you'll see that it works! Now you have a 15 digit credit card number that passes the luhn test. Kinda neat huh?
+
+### Application
 
 Now I'll show you how I used the scraped information:
 
@@ -252,8 +258,6 @@ mod10(network = "Visa")
 
 The first item is a luhn algorithm of length 14, could be any credit card number. The second element is the specified visa credit card number. Pass the second string through [here](http://www.validcreditcardnumber.com/) to confirm.
 
-I am sure there is more information that I am missing besides these specifics, but I am satisfied for now. The coding process probably took only 2 or so hours to create (not including the time taken in writing the blog posts and research). This seems like an effective technique to process unique identification numbers for your company or even 'fake' credit card numbers. Odds are, someone has those values, so maybe you should be careful. 
+There is definitely more information that missing besides these rules to generate a fake credit card number, but that should be enough. It seems like an effective technique to process unique identification numbers for your company or even 'fake' credit card numbers. Odds are, someone has those values, so maybe you should be careful. 
 
-I'm still kinda angry that my McDonald's app is being dumb. I really want those one dollar deals...
-
-Anyways, I hope you get a chance to take a look at this on your own!
+Note here, that I never used this to pay for anything. However, I'm still a bit angry that my McDonald's app is being dumb. I really want those one dollar deals...
