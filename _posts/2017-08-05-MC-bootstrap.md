@@ -7,168 +7,108 @@ excerpt: "Bootstrapping in R"
 project: true
 ---
 
+We oftentimes undermine the power that non-parametric methods have in predicting probabilities of outcomes. Sometimes, we just don't have enough data to find out a confidence estimate and interval of an outcome. Other times, we lack information to perform accurate hypothesis tests of statistical significance. These situations usually lead to requiring augmentation models to figure out likelihood estimates of certain outcomes with the limited information!
 
-We oftentimes undermine the power that non-parametric methods have in predicting probabilities of outcomes. Sometimes, we just don't have enough data to find out a confidence estimate and interval of an outcome. Other times, we lack information to perform accurate hypothesis tests of statistical significance. These situations usually lead to needing models to figure out likelihood estimates of certain outcomes with the limited information we have!
-
-Fortunately, we have the monte carlo method to give us a good gist. Monte carlo sampling is a technique that allows for estimates to follow a pattern of the law of large numbers, creating a central limit distribution. In other words, MC takes a random sample of certain events (estimates) over and over and over and over again to obtain numerical events from uncertainty. Monte Carlo sampling is very useful when determining confidence estimates from non-parametric distributions. As long as we are familiar with a 'true' proportion or a tendency of the estimate, we can create confidence estimates.
+Fortunately, we have the monte carlo method to give us a good gist. Monte carlo sampling is a technique that allows for estimates to follow a pattern of the law of large numbers, creating a central limit distribution. In other words, MC takes a random sample of certain events (parameter) over and over and over and over again to obtain numerical events from uncertainty. Monte Carlo sampling is very useful when determining confidence estimates from non-parametric distributions. As long as we are familiar with a 'true' proportion or a tendency of the estimate, we can create confidence estimates.
 
 ![](https://thumbs.gfycat.com/InbornTerrificAvocet-size_restricted.gif)
 
-One type of monte carlo sampling is the bootstrap technique (this is something that I went deeper when I covered [random forest models](https://tykiww.github.io/2017-04-05-rf-model/) in the past). Bootstrapping is one of the most useful procedures in determining confidence interval parameter estimates and is a sampling technique with replacement. This means, that every time an object is sampled, it is replaced back with the same probability of independent occurrence. This is especially useful when we have known/estimated probabilities of certain outcomes and we are testing with limited amounts of data. Bootstrapping has been known to be valuable in dealing with optimization when there may be heteroscedasticity  (errors are not normally distributed) and distributional assumptions may not be met.
+One type of monte carlo sampling is the bootstrap technique (this is something that briefly covered in a [random forest models](https://tykiww.github.io/2017-04-05-rf-model/) post in the past). Bootstrapping is one of the most useful procedures in determining confidence interval parameter estimates and is a sampling technique with replacement (replacement means, that every time an object is sampled, it is replaced back with the same probability of independent occurrence). This is especially useful when we have known/estimated probabilities of certain outcomes and we are testing with limited amounts of data. Bootstrapping has been known to be valuable in dealing with optimization when there may be heteroscedasticity  (errors are not normally distributed) and distributional assumptions may not be met.
 
 In short, it's a ridiculously useful technique to create more data when we have just partial information. Well then, let's take a look at some coding!
 
 ===================================
 
-At first, I was going to take a look at some success/failure outcomes (ie. binomial distribution), but I thought it might be nicer to look at more complex situations.
+### Case
 
+You are a pest control sales agent looking to figure out how many doors you need to knock on, before having at least 1 potential customer (an individual that 'at the least' gives you their contact info). Let's just say, that this event X is represented by a geometric distribution (n = 1,2,..100) with p = 0.2 for this particular area (a gross oversimplification). 
 
+If you were to knock on a total of 100 doors that day what is the average number of doors you must knock to reach a potential customer? 
 
-Here's a hypothetical situation where the bootstrap & monte carlo technique may be useful:
-
-  - Suppose your company has 4 sales areas that have a history of closing a certain probability of deals. Let's call these divisions A, B, C, and D. 
-
-  - With phone rates being 2 cents a call, the manager was worried that their area selections are becoming obsolete and that they are going to lose revenue.
-
-  - Because past data has shown that at least 4 percent of people who answer calls buy your product (On average, one sale makes about $199), the manager has decided that they wanted to re-evaluate how costly each phone call would be and see how many calls it will take to get at least one of every single area to respond. 
-
-  - After repeated data collection, we have observed that each division has respective probabilities of c("A" = 0.10,"B" = 0.25,"C" = 0.15,"D" = 0.40, "E" = .775) people answering phone calls. E stands for the average compliment of these probabilities, so it would  be the probability of no one answering.
-
-
-**What is our estimated profit/per call?**
-
-**Are these collective areas profitable before all fixed and variable costs (taxes, overhead, and employee compensation)?**
-
-**Is this a valid measure of area performance?**
-
-Alright, let's get going already. First, I'll call out the beloved `dplyr` package to help me with this function. I honestly don't need it, but it makes this code a little more fun to work with. Well, since we are looking at how many tries it takes until we succeed on getting at least one call from each area. This is a great example of testing out four different geometric distributions! For this problem, instead of starting off each individual area and performing an rnbinom, I decided to stick them all into one sample and bootstrap it. I decided to do this because I wanted to see what the estimated profit per call was if we were calling each area at once. Here, bootstrapping actually allows us to resample, independently, without replacement, thus bringing the probability of getting at least one of each call closer to the true values (0.10, 0.25, 0.25, 0.40). 
-
-I also toyed with changing the boolean *TRUE* to a character and character matching twice -once with `grepl` to produce the T, second by using `matches` to match the TRUE with itself. These were marked with a counter until the while loop marked every area as TRUE.
-
-This procedure is run n times indicating the total number of monte carlo samples to go through to perform the count for how many calls it takes for us to get an answer from all four areas.
 
 ```r
-library(dplyr)
+library(tidyverse)
+```
 
-numcall4 <- function(n=100) {
-tha.calls <-c()
-for (j in 1:n) {
-  count <- 0
-  A <- FALSE
-  B <- FALSE
-  C <- FALSE
-  D <- FALSE
-  E <- FALSE
-  while (!(A & B & C & D)) {
-    count <- count + 1
-    num.box <- sample(c("A", "B", "C", "D", "E"), size = 1, replace = TRUE, prob = c(0.10, 0.25, 0.15, 0.40, 0.775))
-      # just for fun, I did a character match with the boolean TRUE
-    if (0 < sum(matches(match = "TRUE",vars = as.character(grepl("A",num.box))))) {
-      A <- TRUE
-    } else if (0 < sum(matches(match = "TRUE",vars = as.character(grepl("B",num.box))))) {
-      B <- TRUE
-    } else if (0 < sum(matches(match = "TRUE",vars = as.character(grepl("C",num.box))))) {
-      C <- TRUE
-    } else if (0 < sum(matches(match = "TRUE",vars = as.character(grepl("D",num.box))))) {
-      D <- TRUE
-    } else
-      E <- FALSE # doesn't do anything.
+This problem is rather simple. Since we are looking at the number of doors 'until' we reach a potential customer, we notice that this is geometric. To create our data, we will use `rgeom() + 1`. For a more precise simulation, we could use the actuarial package `actuar` using the given function: `rztgeom(n, prob)`.
+
+### Model
+
+To begin, we will initialize some parameters of interest. Just to note, taking about 100,000 samples is pretty much a standard. 10,000 may be okay, but the larger you have the better it is.
+
+```r
+doors <- 100 # If we knocked on 100 doors that day.
+p <- 0.2 # overall probability of getting in a house (not bad dude)
+n_reps <- 100000 # monte carlo repetitions
+```
+Next, we will create a function to produce confidence intervals on each randomly generated set of values. This is separated into mean confidence intervals and proportion confidence intervals. Just to note, that these intervals are practically same. However, the proportion is different because it is a biased estimator. With enough samples, it is accurate up to 3 decimal points (since it's a proportion).
+
+```r
+ci <- function(x, prob = FALSE) {
+  if (prob == TRUE) {
+    mean(x) + c(-1, 0, 1) * qnorm(.975)* sqrt(mean(x)*(1-mean(x)/length(x))
+  } else {
+    vals <- confint(x) ; c(vals[1], mean(x), vals[2])
   }
-  tha.calls[j] <- sum(count)
 }
-
-tha.calls # about 20
-}
-yup <- mean(numcall4())
-hist(numcall4(), main = "Histogram of Bootstrapped Calls")
-c("mean # of calls" = yup)
 ```
 
-![](https://tykiww.github.io/img/boot/bootfix1.png)
+Next is our model. As a brief explanation, we notice that we are replicating the sample of just 1 parameter over and over again. After sampling our data from our geometric, we are performing confidence intervals on all the data. These intervals are unlisted and created into tables. We should have 100,000 confidence intervals!
 
-Output
+```{r}
+set.seed(15)
 
-    ## mean count of calls 
-    ##           25.61 
+replicate(n_reps,{
+    data <- rgeom(doors,p)+1
+    data %>% ci(FALSE)
+  }) %>% unlist %>% t %>% 
+  as_tibble -> sims
 
-The histogram shows a negative binomial pattern with a low probability and an estimate of about 25. If you're trying to replicate, don't worry if your histogram looks slightly diffferent from mine. Now that we have a function that gives us a MC estimate of the number of calls it takes, next we can assess the profitability of each outcome and check the confidence interval of that estimate.
+# Without piping..
+
+    ### temp <- replicate(n_reps, { 
+    ###     data <- rgeom(doors,p)+1
+    ###     ci(data, FALSE)
+    ###   })
+    ### 
+    ### temps <- t(unlist(temp))
+    ### sims <- as_tibble(temps)
+```
+
+Now, technically, that was it! Let's plot the distribution we have calculated and see how we are doing.
 
 ```r
-# Vectorize values
-sale.prob <- .04 # probability of completing a sale/total answered phone calls.
-ppc <- .02 # price per call
-avrev <- 199 # average revenue
-nReps <- 100 # number of repetitions
-
+ci(unlist(sims[,2]), FALSE)
+hist(unlist(sims[,2]))
 ```
+    ## 4.998482    5.001254    5.004026
 
-I previously tried this with 1000 bootstrap samples with 1000 monte carlo repetitions, but I realized that this was going to take way too long and I had to end the code early. More points are always nice for bootstrap sampling as our n increases, our p(power to reject the null | Ho) increases.
-I put in a timer to see how long it would take with just 100x100. It should roughly be 100 times shorter than what I was trying before!
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/boot/one.png)
+
+We see a rather normal plot of the number of times it takes to get in a door ~5 doors until a sale (not bad!)
+
+If we were curious the probability of times we would have to knock on 6 doors or more, all we do is take the average of a boolean comparison. 
 
 ```r
-ptm <- proc.time()  # Start the clock!
-
-check <- c()
-av_calls <- c()
-for (i in 1:nReps) {
-av_calls[i]<- mean(numcall4())
-check[i] <- sale.prob*av_calls[i]*avrev - av_calls[i]*ppc
-}
-
-proc.time() - ptm   # Stop the clock
-
-length(check) # Just to see if I have 100 elements in the vector
-# t/s = to succeed
-c("mean calls t/s"=mean(av_calls), "mean short-profit t/s"=mean(check))
+mean(unlist(sims[,2]) > 6)
 ```
 
-      ##                user  system elapsed 
-      ##            30.212   0.213  30.924 
-      ## mean calls t/s mean short-profit t/s 
-      ##        22.5900              179.3646 
-      
-Oh good, it only took about 30 seconds. That's not bad. No wonder 1000x1000 took me forever: That would have taken me about (100)30/60 which would be roughly 50 min. I have a rather nice mac that runs fairly fast. I wonder how my CPU really compares with other machines.
+    ## 0.01636
 
-Each `check` value corresponds to a monte carlo element of the short-term profit that we would earn taking into account the average revenue minus the price per call. It seems like, on average, we make about 179.37 dollars after successfully getting at least one call from  each of the four areas. Now, dividing that by the average number of calls gives us about 7.94 dollars on average per-call.
+That's pretty impressive! If you were to go knock on doors, you 9/10 times you would get a sale before hitting 6-7 doors. 
 
-```r
-ave_calls <- mean(av_calls)
-short_profit <- mean(check)
-c("profit/call" = short_profit/ave_calls )
-# this means we make $ 7.94 on average per call that goes through to all 4 areas.
+### Assessing performance
+
+Now, this is only in the case of having a true parameter of interest. As you noticed the many confidence intervals we generated with the `replicate()` function, our confidence intervals will not always capture the true mean. However, if we have a good enough model, all of our confidence intervals should contain the true value 95% of the time. Let's take a look.
+
+```{r}
+interval <- dplyr::select(sims,-2)
+true_mean <- 1/p 
+mean(interval[1] < true_mean & true_mean < interval[2])
 ```
+    ## 0.9425
 
-    ## profit/call 
-    ## 7.94 
-    
-So, in essence, if we were trying to make sure to randomly hit all 4 areas, we would expect to make 7.94 per call that goes through and 179.37 on average if they made at least (about) 23, calls randomly until they hit all 4 areas. 
-
-Let's take a look at how confident we are about this estimate.
-
-```r
-hist(check,main = "Histogram of short-term profit")
-mc.err <- quantile(check,c(.025,.975))
-abline(v=mc.err,col='red')
-
-c(mc.err[1],"estimate"=short_profit,mc.err[2])
-```
-
-    ##      2.5% estimate    97.5% 
-    ##  158.0437 179.3646 200.494
+For the geometric distribution, the true probability is 1/p. By sticking that into our comparison, we get about 94.25%. This confirms that we haven't done our model incorrectly!
 
 
-![](https://tykiww.github.io/img/boot/bootfix2.png)
-
-After taking a look at the histogram of the data, we can be quite certain that 95% of the estimates that we have created can be expressed by (158.0437, 200.494). In other words, we are 95% confident that the true mean short-profit is captured in this interval. I guess our confidence interval is rather wide with a margin of error of about 21 dollars. For better estimates, we should probably perform even more bootstrap samples to narrow up the confidence interval.
-
-*See how useful this is??* I guess another step I could add is comparing the data to a monte carlo assesed without area "A" as it had the lowest probability outcome. If I was a manager, I would take a comparison and drop one of the areas and focus on a section that yields more revenue. Another option is raising or lowering the price on the product we're selling depending on the price elasticity of demand. It may seem intuitive that if we drop A that we would make even more money, but we never know with such low probabilities... I would do this by specifying the prob of "A"=0 in the vector above and comparing estimates by hypothesis testing. (Ho: No difference when removing area A, Ha: There is a difference). 
-
-Depending on the time, focus, and energy of the employees we could make an important cost-cutting decision to increase our profits!
-
-I guess there were a few things that I could have done better from this analysis. This is NOT by all means a procedure that accurately predicts the exact profits that will be gained by the company. I guess this model is more of a prescriptive measure than a predictive measure. Yet, if we have data enough to compare different set groups, we will be able to make important and informed decisions for what to do. Another important thing to consider, is that this model is probably **_only useful when the probabilities of certain areas are very similar and hard to decipher just by intuition_**. If area D had a probability of .80 for calls received, I would most definitely drop A and possibly C and/or D.
-
-I hope this reflects, at least, some of my abilities of effective data use in an applied setting.
-
-Thank you for patiently reading (:
-
-
+Now you're happy, and the pest agency is happy. Everybody is happy. You'll know how well you are progressing as you move forward!
