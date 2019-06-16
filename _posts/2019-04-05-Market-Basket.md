@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Market Basket Transaction Analysis"
-image: "https://tykiww.github.io/img/boot/bootfix2.png"
+image: "https://raw.githubusercontent.com/tykiww/imgbucket/master/img/assoc-mining/arvizgify.gif"
 # date:   2017-08-05
 excerpt: "What is bought with what?"
 project: true
