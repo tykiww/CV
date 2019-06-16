@@ -31,11 +31,12 @@ library(chron)
 
 Say that we collected data on two types of website layouts. One looks like this:
 
-![](https://tykiww.github.io/img/A-B/1.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/A-B/1.png)
 
 The other like this:
 
-![](https://tykiww.github.io/img/A-B/2.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/A-B/2.png)
+
 
 You see the difference? Just a slight variation, but the font change is noticeable enough. The data collected (of course, it's made up) is the frequency to which (A) the posts  were clicked from the first layout, or (B) the post click frequency by the second layout. Of course, I have no marketing agenda, but it would be nice to direct an individual towards a specific part of my site. You can download the data from [my repository]("https://raw.githubusercontent.com/tykiww/projectpage/master/datasets/WebAB/WebAB.csv").
 
@@ -45,7 +46,7 @@ dat <- read_csv(file = a)
 View(dat)
 ```
 
-![](https://tykiww.github.io/img/A-B/3.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/A-B/3.png)
 
 We see here our information. Our columns are labeled for the data count, layout name, a boolean for whether or not the link was clicked, when it was clicked, and a last column that randomized the clicked column just in case our data was not interesting enough (do NOT do this if you really want to test. Pretty Obvious..). We'll begin by cleaning.
 
@@ -65,7 +66,7 @@ colnames(info) <- c("groupName", "activeTouch", "dateTime")
 info # cleansed!
 ```
 
-![](https://tykiww.github.io/img/A-B/4.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/A-B/4.png)
 
 Here is our data. Now let's look at some of the details. 1 stands for the number of clicks, whereas the 0 stands for the frequency for which it hasn't been clicked.
 
@@ -73,7 +74,7 @@ Here is our data. Now let's look at some of the details. 1 stands for the number
 fqtb <- table(info$groupName, info$activeTouch) 
 ```
 
-![](https://tykiww.github.io/img/A-B/5.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/A-B/5.png)
 
 It looks here that the B clickpath has been utilized more than A over the small period. If we were to use a quick check with confidence intervals, we will see if there is an observed significant difference. We look mostly at how much more one test beats out the other test. 
 
@@ -98,7 +99,7 @@ abconfint(A1,B1)
   
 ```
 
-![](https://tykiww.github.io/img/A-B/6.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/A-B/6.png)
 
 Interestingly, their means are pretty far apart, but we notice that the confidence intervals seem to overlap. Some make the mistake and suggest no statistical significance. However, we have to be very careful before we make the immediate conclusion that the p-value is below 0.05. Let's instead go for a proportion test of equality (note here that our data is better interpreted with levels arranged conversely). 
 
@@ -106,7 +107,8 @@ Interestingly, their means are pretty far apart, but we notice that the confiden
 prop.test(fqtb)
 ```
 
-![](https://tykiww.github.io/img/A-B/7.png)
+
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/A-B/7.png)
 
 We finally conclude that there is statistical significance at alpha = 0.05. It isn't that we should have checked the chi-squared prop test at the beginning, but using both the p-value and the confidence interval, we notice the difference "by its size".
 
@@ -135,7 +137,7 @@ ggplot(A, aes(dateTime, c), color = "black") + geom_line() +
   
 ```
 
-![](https://tykiww.github.io/img/A-B/8.png)
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/A-B/8.png)
 
 Right here, we notice immediately that B has been outperforming A at a faster rate even without looking at the significance statistics. This graphic is probably something you want to show to your web content manager as a companion to your confidence interval and p-value. Your suggestion for these changes can go a long way! Even a small 2-3% change can go a long way especially if you deal with volumes of traffic (which mine does not).
 
