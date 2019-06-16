@@ -1,7 +1,7 @@
 
 ![Caption: Happiness](https://raw.githubusercontent.com/tykiww/Images/master/family/goblin_valley.jpg)
 
-Currently, I am an undergraduate finishing a degree in Statistics and Analytics at <a href="https://www.byu.edu/">Brigham Young University</a>. I have been blessed with tremendous opportunities working with [Jewelry Television](https://www.jtv.com/), [Lawrence Livermore National Laboratories](https://lasers.llnl.gov/), [Franklin Covey](https://www.franklincovey.com/), [University of Tokyo](https://www.u-tokyo.ac.jp/en/index.html), and a couple startups.
+Currently, I am an undergraduate finishing a degree in Statistics and Analytics at <a href="https://www.byu.edu/">Brigham Young University</a>. I have been blessed with tremendous opportunities working with [Jewelry Television](https://www.jtv.com/), [Lawrence Livermore National Laboratories](https://lasers.llnl.gov/), [Franklin Covey](https://www.franklincovey.com/), [University of Tokyo](https://www.u-tokyo.ac.jp/en/index.html), and a couple of startups.
   
 The aim is to shoot the gap between <b>Business Strategy</b> and <b>Data Science</b>. When I'm not studying, I mostly enjoy ⚽futsal, reading, and spending time with my wife.
 
