@@ -17,7 +17,7 @@ One way to figure this out is [dynamic pricing](https://tykiww.github.io/2018-05
 
 <hr>
 
-```{r}
+```r
 library(tidyverse)
 library(caret)
 library(readxl)
@@ -27,7 +27,7 @@ Here is a small sidenote.
 
 Reading in from Excel is usually a simple thing, usually we just find the file in our working directory and read in the path. 
 
-```{r}
+```r
 path <- "https://github.com/tykiww/projectpage/raw/master/datasets/UCI-Retail/UCI-Retail.xlsx"
 # read_excel(path)
 gc()
@@ -38,7 +38,7 @@ gc()
 
 However, readxl does not actually work for reading in from online. To do so, we must specify a temporary location to store a download.
 
-```{r}
+```r
 temp <- tempfile(fileext = ".xlsx")
 download.file(path, destfile = temp, model = 'wb')
 retails <- read_excel(temp, sheet = 1) %>% as_tibble
@@ -50,7 +50,7 @@ There we go!
 
 Now that we have our data read in, let's pick an object from the data that has a high volume. The more information, the better.
 
-```{r, echo = FALSE}
+```r
 grep("CALCULATOR",retails$Description) %>% length
 grep("HANGER",retails$Description) %>% length
 grep("LUNCH BOX",retails$Description) %>% length # This one!
@@ -62,7 +62,7 @@ retail <- retails[ind,]
 
 Lunchboxes it is. Let's move on to seeing how sensitive individuals are towards price change. The most important information here is the `Quantity` and `UnitPrice`. Let's snag those and clean the data.
 
-```{r}
+```r
 # quick clean
 retail1 <- subset(retail, retail$UnitPrice > 0)
 retail2 <- subset(retail1, retail1$Quantity > 0)
@@ -85,7 +85,7 @@ Method 1: (Level, Level) PE = (ΔQ/ΔP) * (P/Q)
 
 This method is simple (so is the other one). We plot X and Y, then use the beta coefficient as the change in price and quantity. Aftwards, we will multiply P/Q by the most typical value. Since the data is both right skewed, we will use the median values.
 
-```{r, echo = FALSE}
+```r
 out.el <- lm(Quantity ~ ., data = elast)
 levelast <- out.el$coefficients["UnitPrice"]*median(elast$UnitPrice) / median(elast$Quantity)
 levelast
@@ -105,7 +105,7 @@ Maybe this data is not as useful in predicting. There may be two factors to this
 
 Method 2:  (Log, Log) Coefficient % Change output.
 
-```{r, echo = FALSE}
+```r
 out.els <- lm(log(Quantity) ~ log(UnitPrice), data = elast)
 out.els$coefficients[2]
 # log-log model.
@@ -125,7 +125,7 @@ Let's make some predictions. Our optimal Price formula is given by...
 
 If we were to assume that the store's per-unit variable cost is around 1.95, we may model our elasticity as such..
 
-```{r, echo = FALSE}
+```r
 costperbox = 1.95
 elasticity = out.els$coefficients[2]
 (elasticity * costperbox) / (1 + elasticity)
