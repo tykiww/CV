@@ -1,141 +1,158 @@
 ---
 layout: post
-title:  "Optimum Pricing with Cross-Price Elasticity"
+title:  "Beta-Binomial with Return Rates"
 image: "https://raw.githubusercontent.com/tykiww/imgbucket/master/img/CPE/two.png"
 # date:   2018-04-05
-excerpt: "Elastic?"
+excerpt: "Another look at Bayes"
 project: true
 ---
 
-Calculating Cross-Price Elasticity and some tricks in R.
 
-Raise or lower the price? How much money could we actually make? How sensitive are people towards price change?
+Contrary to the last post dealing with bayesian analysis, finding posterior and prior distributions are not the only things you can do with Bayesian analysis. However useful they may be, sometimes they just cannot predict future outcomes or validate your prior guesses. Here comes the prior and posterior predictive distributions.
 
-![](http://econs.com.sg/wp-content/uploads/Inelastic-Demand.png)
+![](https://pbs.twimg.com/media/DsndeNTWoAALimp.jpg)
 
-One way to figure this out is [dynamic pricing](https://tykiww.github.io/2018-05-05-Dynamic-Chocolate-Pricing/). However, there are simpler methods especially when you know how to run a regression. Let's download the UCI retail dataset to see what we can discover.
+Let's take a marketing example. Take a look at the data below 
+(Data below is <i>near</i> reported values, however returns are fictitious).
 
-<hr>
 
-```r
-library(tidyverse)
-library(caret)
-library(readxl)
+2018 Apple iPhone X vs Apple iPhone 8 Q1 Sales and Refund Table (in thousands)
+
+
+| Phone        | Sold Q1    | Returns Q1  | Unit Price   |
+|--------------|------------|-------------|--------------|
+| iPhone X     | 12700      | 437         | 1.0          |
+| iPhone 8     | 8500       | 277         | 0.629        |
+
+In the realm of handheld phones, Apple is the largest giant of this day. Let's assume (given the data) that you are looking at the performance of your two best sellers. However, as with any product, the return rates are always concerning. Refund policy is 30 days, but the data shows a surprising amount of users refunding. As a standard, you have benchmarked that a continued (3 quarters) refund rate of over 3% for 3 quarters signals a need for a re-vamp, re-call, new release, or upgrade in hardware.
+
+Let's explore our data and answer two questions to make some predictions on performance.
+
+1. How much better is iPhone X doing in comparison to iPhone 8? Or is it the opposite?
+2. What is the prior probability of return failures?
+3. What is the prior predictive probability of having over 30% returns on both items if they sold the same volume?
+
+To answer number one and two, let's use our current statistics as prior guesses.
+
+```{r}
+# ipx Beta(437,12263)
+a <- 437 ; b <- 12263
+a1 <- 277 ; b1 <- 8223
+xx <- seq(0,1,length.out = 1001)
+plot(xx,dbeta(xx,a,b), type = "l", col = "maroon", xlim = c(0,.06))
+# ip8 Beta(277,8223)
+lines(xx,dbeta(xx,a1,b1), col = "steel blue")
+
+# 95% credibility intervals for the proportion of returns made on each phone
+c("lower" = qbeta(.025, a, b), "estimate" = a/(a + b), "upper" = qbeta(.975, a, b))
+c("lower" = qbeta(.025, a1, b1), "estimate" =  a1/(a1 + b1) ,"upper" = qbeta(.975, a1, b1))
 ```
 
-Here is a small sidenote.
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/iphone/one.png)
 
-Reading in from Excel is usually a simple thing, usually we just find the file in our working directory and read in the path. 
 
-```r
-path <- "https://github.com/tykiww/projectpage/raw/master/datasets/UCI-Retail/UCI-Retail.xlsx"
-# read_excel(path)
-gc()
+    ##      lower   estimate      upper 
+    ## 0.03130947 0.03440945 0.03764830 
+    ##      lower   estimate      upper 
+    ## 0.02891914 0.03258824 0.03646562 
+
+So far, we see no statistical difference in distributions, however the iPhone 8 seems to be doing slightly better in terms of refund rates. The average refund rate for the X and 8 is 3.4% and 3.2% respectively.
+
+To answer number two:
+
+```{r}
+# 3 percent returns for same data.
+cutoff <- .03*12700 ; cutoff1 <- .03*8500
+# Prior Predictive Distributions (has not changed because we have not observed new data)
+# ipx
+theta <- rbeta(100000, a,b) ; ynew <- rbinom(100000,12700,theta)
+# ip8
+theta1 <- rbeta(100000, a1,b1) ; ynew1 <- rbinom(100000, 8500, theta1)
+
+mean(ynew >= cutoff) ; mean(ynew1 >= cutoff1)
 ```
 
-    ## Error: `path` does not exist:
-    ##  ‘https://github.com/tykiww/projectpage/raw/master/datasets/UCI-Retail/UCI-Retail.xlsx’
+    ## [1] 0.97682
+    ## [1] 0.83548
 
-However, readxl does not actually work for reading in from online. To do so, we must specify a temporary location to store a download.
+This is disconcerting. Assuming the prior and that we will make similar volume in sales, we are 97% (X) and 83.7% (8) likely to get more than 3% returns. 
 
-```r
-temp <- tempfile(fileext = ".xlsx")
-download.file(path, destfile = temp, model = 'wb')
-retails <- read_excel(temp, sheet = 1) %>% as_tibble
+After hearing customer feedback and making some changes and updating new features, all we do on this project is to wait until Q2 to see how we have performed. 
+
+
+2018 Apple iPhone X vs Apple iPhone 8 Q2 Sales and Refund Table (in thousands)
+
+
+| Phone        | Sold Q2    | Returns Q2  | Unit Price   |
+|--------------|------------|-------------|--------------|
+| iPhone X     | 15660      | 441         | 1.0          |
+| iPhone 8     | 18782      | 200         | 0.629        |
+
+Now let's make some posterior inferences from the information we have now.
+
+1. What is the new posterior probability of returns?
+2. With this new information, how much better is one iphone doing in comparison to the other?
+3. What is the new posterior predictive probability given a new sales forecast?
+
+Again, we may answer the first questions as such (if you are at all puzzled at how this is done, take a look at [this post](https://tykiww.github.io/2019-05-05-Good-Sleep-Bayes/)):
+
+```{r}
+# Creating posterior distribution
+astar <- a + 441 ; bstar <- 15560 - 441 + b
+astar1 <- a1 + 200 ; bstar1 <- 18782 - 200 + b1
+nReps <- 100000
+# new monte carlo distributions
+theta <- rbeta(nReps, astar, bstar)
+theta1 <- rbeta(nReps, astar1, bstar1)
+
+round(mean(theta<theta1),4) # iPhone 8, whoah.
 ```
 
-There we go!
+    ## [1] 0  
 
-<hr>
+Our new posterior probabilities is given by a star and b star. iPhone X now has a Beta(878,27382) distribution and the iPhone 8 has a Beta(477,26805) distribution. iPhone 8 clearly overshadowed the performance of returns compared to iPhone X. Their distributions don't even come close.
 
-Now that we have our data read in, let's pick an object from the data that has a high volume. The more information, the better.
+Our cutoff performance for next quarters sales will look as follows (remember, top is X and bottom is 8):
 
-```r
-grep("CALCULATOR",retails$Description) %>% length
-grep("HANGER",retails$Description) %>% length
-grep("LUNCH BOX",retails$Description) %>% length # This one!
-grep("ALARM CLOCK",retails$Description) %>% length
-ind <- grep("LUNCH BOX", retails$Description)
-
-retail <- retails[ind,]
+```{r}
+# 95% credibility intervals for the proportion of returns made on each phone
+paste("Approximate probabilities of iPhone returns.")
+c("lower" = qbeta(.025, astar, bstar),"estimatae" = astar/(astar + bstar) , "upper" = qbeta(.975, astar, bstar))
+c("lower" = qbeta(.025, astar1, bstar1), "estimate" = astar1/(astar1 + bstar1),"upper" = qbeta(.975, astar1, bstar1))
 ```
-
-Lunchboxes it is. Let's move on to seeing how sensitive individuals are towards price change. The most important information here is the `Quantity` and `UnitPrice`. Let's snag those and clean the data.
-
-```r
-# quick clean
-retail1 <- subset(retail, retail$UnitPrice > 0)
-retail2 <- subset(retail1, retail1$Quantity > 0)
-elast <- select(retail2, Quantity, UnitPrice)
-# plot
-rm(retail,retail1,retail2, temp, path)
-gc() # garbage collection to clear out data.
-```
-
-
-Let's jump straight in with the model. Typically, we may need to remove outliers and influential observations. However, for the sake of time and computational power, we will move right on.
-
-<hr>
-
-There are many methods to calculate price elasticity using software. Since Elasticity is defined as the percent change in quantity divided by percentage change in price, we will be comparing 2 models using software. 1st is the most commonly seen, the level-level method. 2nd is the more 'accurate' model measuring the log-log elasticity. If you want a refresher on what elasticity is, click [here](https://courses.lumenlearning.com/boundless-economics/chapter/price-elasticity-of-demand/).
-
-<hr>
-
-Method 1: (Level, Level) PE = (ΔQ/ΔP) * (P/Q)
-
-This method is simple (so is the other one). We plot X and Y, then use the beta coefficient as the change in price and quantity. Aftwards, we will multiply P/Q by the most typical value. Since the data is both right skewed, we will use the median values.
-
-```r
-out.el <- lm(Quantity ~ ., data = elast)
-levelast <- out.el$coefficients["UnitPrice"]*median(elast$UnitPrice) / median(elast$Quantity)
-levelast
-# level-level model
-ggplot(elast,aes(y = Quantity,x = UnitPrice)) + geom_point(color='steel blue') + geom_smooth(method = 'lm', formula = y~x, se = FALSE, color = 'forest green')
-```
-
-    ## UnitPrice 
-    ## -5.991306
     
-![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/CPE/one.png)
+    ## [1] "Approximate probabilities of iPhone returns."
+    ##      lower  estimatae      upper 
+    ## 0.02907744 0.03106865 0.03312272 
+    ##      lower   estimate      upper 
+    ## 0.01596261 0.01748406 0.01907249 
 
-Our R squared value is below 0.05 which seems to be rather low. However, we may interpret this coefficient as such: A one percent change in price will decrease the amount of lunchboxes sold by over 500 percent. There is evidence to suggest that quantity of lunchboxes demanded is very responsive to a change in the good’s price.
+There is most definitely a statistical difference between the two intervals. Both phones have done better in reducing returns. However, iPhone X is still on it's way. Let's make some predictions to see if we are on our way.
 
-Maybe this data is not as useful in predicting. There may be two factors to this. 1. If we take a look at the labeled data, we notice that this data is comprised of retail throughout subsets of different countries (No wonder our values vary so much). and 2. There are clear outliers in the data when plotted and obvious skewing. Our log transformations should help.
+After receiving word that our sales forecast for the iPhone X will be 2% lower than previous, and the iPhone 8 will gain some traction for this next quarter by increasing 1.5%. Let's make some cutoff values for our new forecast and see what our posterior probability of getting more than 3% returns.
 
+```{r}
+# 3 percent returns for same data.
+cutoff <- .03*15660*(.98) ; cutoff1 <- .03*18782*(1.015)
+# Posterior Predictive Distributions 
+# ipx
+theta <- rbeta(100000, astar,bstar) ; ynew <- rbinom(100000,round(15660*(.98)),theta)
+# ip8
+theta1 <- rbeta(100000, astar1,bstar1) ; ynew1 <- rbinom(100000, round(18782*(1.015)), theta1)
 
-Method 2:  (Log, Log) Coefficient % Change output.
-
-```r
-out.els <- lm(log(Quantity) ~ log(UnitPrice), data = elast)
-out.els$coefficients[2]
-# log-log model.
-ggplot(elast,aes(y = log(Quantity),x = log(UnitPrice))) + geom_point(color='steel blue') + geom_smooth(method = 'lm', formula = y~x, se = FALSE, color = 'forest green')
+mean(ynew >= cutoff) ; mean(ynew1 >= cutoff1)
 ```
 
-    ## log(UnitPrice) 
-    ##      -1.998695  
+    ## [1] 0.72765
+    ## [1] 0
 
-![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/CPE/two.png)
+Wow, we see a clear difference in performance! Based on the priors we chose and the observed data, the approximate posterior predictive probability of receiving greater than 3% returns are 72% (X) and 0% (8) given our new sales observations. Now what needs to be done is to provide a bit more improvement for the iPhone X to reduce that probability below 50%. 
 
-We notice that the model has reduced skewedness with a lower MSE and better Rsq value. This is more indicative of the correct model. The interpretation of this output is the same as the last, however with more accurate results: A one percent change in price will decrease the amount sold by 199% percent. We notice that the elasticity is negative, yet below -1 making it very inelastic (the percentage change in quantity demanded is larger than that in price). Depending on where we price our object, we should be able to determine the optimal price opint for this demand.
+Hopefully this has sparked some realizations on how bayesian estimation can be used in our workforce. Especially as a KPI, bayesian techniques are fantastic in giving us approximately accurate predictions based on the information we currently have. As a business analyst, the implications of an estimation technique as such may be the key to measuring better performance. However, we must remember to be careful not to violate some assumptions or we may come out with less than attractive numbers. 
 
-Let's make some predictions. Our optimal Price formula is given by...
+Good luck on your next analytics project!
 
-    ## Optimal Price = (Elasticity * Total Cost per Salad) / (1 + Elasticity)
 
-If we were to assume that the store's per-unit variable cost is around 1.95, we may model our elasticity as such..
-
-```r
-costperbox = 1.95
-elasticity = out.els$coefficients[2]
-(elasticity * costperbox) / (1 + elasticity)
-```
-
-    ## 3.902547
-
-This is good news. By ensuring our price to be near 3.90 per lunchbox, we have optimized for this particular dataset. Of course, we had not breaken down seasonal trends, other factors, nor have we created an interval (use the `predict` function with the parameter interval as 'prediction' for that.). However we have been able to figure out the optimal price from our price elasticity of demand. Now the lunchbox business is back on track.
-
-Hopefully this was a useful tool in determining your next pricing project!
 
 
 
