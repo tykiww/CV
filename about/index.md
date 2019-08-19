@@ -7,6 +7,7 @@ My future goal is to shoot the gap between <b>Business Strategy</b> and <b>Data 
 
 <hr>
 
+<p></p>
 
 <details><summary> Click Arrow for Quick Work Summary </summary>
 
