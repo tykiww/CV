@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Poisson-Gamma Analysis of Eden Hazard"
-image: "https://raw.githubusercontent.com/tykiww/imgbucket/master/img/CPE/two.png"
+image: "https://raw.githubusercontent.com/tykiww/imgbucket/master/img/Hazard/1.png"
 # date:   2018-04-05
 excerpt: "Belgium's best player"
 project: true
