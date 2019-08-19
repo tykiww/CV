@@ -15,16 +15,17 @@ Quick Work Summary..
 
 <b>Internships:</b>
 
-<p>　・Strategy & Analytics: <a href="https://www.jtv.com/">Jewelry Television</a> </p>
+<p>　・Business & Analytics: <a href="https://www.jtv.com/">Jewelry Television</a> </p>
 <p>　・Data Science: <a href="https://lasers.llnl.gov/">Lawrence Livermore National Laboratories</a> </p>
 <p>　・Business Analysis: <a href="https://www.franklincovey.com">Franklin Covey</a> </p>
 <p>　・Recruitment Consulting: <a href="https://www.icon-partners.com/">Icon Partners</a> </p>
 
 <b> Volunteer: </b>
 
+<p>　・President: <a href="https://www.linkedin.com/company/byu-jsa/">BYU Japanese Student Association</a> </p>
 <p>　・Data Analysis: <a href="http://metaworklife.com/">Meta WL</a> </p>
 <p>　・Missionary: <a href="https://www.churchofjesuschrist.org/?lang=eng">The Church of Jesus Christ of Latter-Day Saints</a> </p>
-<p>　・President: <a href="https://www.linkedin.com/company/byu-jsa/">BYU Japanese Student Association</a> </p>
+
 
 
 <b> Research/Teaching: </b>
@@ -32,7 +33,7 @@ Quick Work Summary..
 <p>　・Research Assistant: <a href="https://www.u-tokyo.ac.jp/en/index.html">University of Tokyo</a> </p>
 <p>　・Teaching Assistant: <a href="https://statistics.byu.edu/">Brigham Young University</a> </p>
 
-<b> Check it out: </b>
+## Check it out:
 
 <p>　・<strong>Connect</strong> with me on <a href="https://www.linkedin.com/in/taiki-wada">LinkedIn</a>!</p>
 
