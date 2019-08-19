@@ -26,7 +26,7 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 <b> Volunteer: </b>
 
 <p>　・President: <a href="https://www.linkedin.com/company/byu-jsa/">BYU Japanese Student Association</a> </p>
-<p>　・Data Analysis: <a href="http://metaworklife.com/">Meta WL</a> </p>
+<p>　・Data Consulting: <a href="http://metaworklife.com/">Meta WL</a> </p>
 <p>　・Missionary: <a href="https://www.churchofjesuschrist.org/?lang=eng">The Church of Jesus Christ of Latter-Day Saints</a> </p>
 
 
