@@ -40,7 +40,7 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 
 
 
-<p>                     ..</p>
+<p></p>
 
 <hr>
 
