@@ -5,7 +5,7 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 
 My future goal is to shoot the gap between <b>Business Strategy</b> and <b>Data Science</b>. 
 
-<hr></hr>
+<hr>
 
 
 <details><summary> Click Arrow for Quick Work Summary </summary>
@@ -43,7 +43,7 @@ My future goal is to shoot the gap between <b>Business Strategy</b> and <b>Data 
 <p></p>
 <p></p>
 
-<hr></hr>
+<hr>
 
 ## Check it out:
 
