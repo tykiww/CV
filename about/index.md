@@ -8,7 +8,7 @@ My future goal is to shoot the gap between <b>Business Strategy</b> and <b>Data 
 
 <details><summary> Click Arrow for Quick Work Summary </summary>
 
-
+<p></p>
 
 <b> Education: </b>
 
@@ -36,7 +36,9 @@ My future goal is to shoot the gap between <b>Business Strategy</b> and <b>Data 
 
 </details>
 
-
+<p></p>
+<p></p>
+<p></p>
 ## Check it out:
 
 <p>　・<strong>Connect</strong> with me on <a href="https://www.linkedin.com/in/taiki-wada">LinkedIn</a>!</p>
