@@ -3,13 +3,13 @@
 
 I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/) working in their Advanced Analytics group. Most importantly, I am an alright husband crazy about futsal and going on adventures with my wife.
 
-My future goal is to shoot the gap between <b>Business Strategy</b> and <b>Data Science</b>. 
-
 <hr>
+
+My future goal is to shoot the gap between <b>Business Strategy</b> and <b>Data Science</b>. 
 
 <p> </p>
 
-<details> <summary> Click Arrow for Quick Work Summary </summary>
+<details> <summary> Click Here for a Quick Work Summary </summary>
 
 <p></p>
 
