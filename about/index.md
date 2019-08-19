@@ -3,7 +3,7 @@
 
 I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/) working in their Advanced Analytics group. Most importantly, I am an alright husband crazy about futsal and going on adventures with my wife.
 
-My future goals are to shoot the gap between <b>Business Strategy</b> and <b>Data Science</b>. 
+My future goal is to shoot the gap between <b>Business Strategy</b> and <b>Data Science</b>. 
 
 
  
@@ -24,6 +24,8 @@ Quick Work Summary..
 
 <p>　・Data Analysis: <a href="http://metaworklife.com/">Meta WL</a> </p>
 <p>　・Missionary: <a href="https://www.churchofjesuschrist.org/?lang=eng">The Church of Jesus Christ of Latter-Day Saints</a> </p>
+<p>　・President: <a href="https://www.linkedin.com/company/byu-jsa/">BYU Japanese Student Association</a> </p>
+
 
 <b> Research/Teaching: </b>
 
