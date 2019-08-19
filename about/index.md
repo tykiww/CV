@@ -39,11 +39,12 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 </details>
 
 
-<p></p>
-<p></p>
-<p></p>
+
+<p>                     ..</p>
 
 <hr>
+
+<p>                     ..</p>
 
 ## Check it out:
 
