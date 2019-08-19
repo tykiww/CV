@@ -36,10 +36,16 @@ My future goal is to shoot the gap between <b>Business Strategy</b> and <b>Data 
 
 </details>
 
+
 <p></p>
 <p></p>
 <p></p>
 
+<p></p>
+<p></p>
+<p></p>
+
+<h></h>
 
 ## Check it out:
 
