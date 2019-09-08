@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "PCA Dimension Reduction on Credit Data"
+title:  "Performing PCA on Credit Data"
 image: "https://raw.githubusercontent.com/tykiww/imgbucket/master/img/PCA/one.png"
 # date:   2019-09-05
 excerpt: "Principal Component Analysis"
