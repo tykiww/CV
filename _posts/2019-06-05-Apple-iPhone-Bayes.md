@@ -34,7 +34,7 @@ Let's explore our data and answer two questions to make some predictions on perf
 
 To answer number one and two, let's use our current statistics as prior guesses.
 
-```{r}
+```r
 # ipx Beta(437,12263)
 a <- 437 ; b <- 12263
 a1 <- 277 ; b1 <- 8223
@@ -60,7 +60,7 @@ So far, we see no statistical difference in distributions, however the iPhone 8 
 
 To answer number two:
 
-```{r}
+```r
 # 3 percent returns for same data.
 cutoff <- .03*12700 ; cutoff1 <- .03*8500
 # Prior Predictive Distributions (has not changed because we have not observed new data)
