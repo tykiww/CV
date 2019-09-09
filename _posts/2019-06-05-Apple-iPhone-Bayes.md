@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Beta-Binomial with Return Rates"
+title:  "Return Rates with Beta-Binomial"
 image: "https://raw.githubusercontent.com/tykiww/imgbucket/master/img/iphone/one.png"
 # date:   2018-04-05
 excerpt: "Another look at Bayes"
