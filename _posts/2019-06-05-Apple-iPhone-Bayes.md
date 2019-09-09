@@ -96,7 +96,7 @@ Now let's make some posterior inferences from the information we have now.
 
 Again, we may answer the first questions as such (if you are at all puzzled at how this is done, take a look at [this post](https://tykiww.github.io/2019-05-05-Good-Sleep-Bayes/)):
 
-```{r}
+```r
 # Creating posterior distribution
 astar <- a + 441 ; bstar <- 15560 - 441 + b
 astar1 <- a1 + 200 ; bstar1 <- 18782 - 200 + b1
@@ -114,7 +114,7 @@ Our new posterior probabilities is given by a star and b star. iPhone X now has 
 
 Our cutoff performance for next quarters sales will look as follows (remember, top is X and bottom is 8):
 
-```{r}
+```r
 # 95% credibility intervals for the proportion of returns made on each phone
 paste("Approximate probabilities of iPhone returns.")
 c("lower" = qbeta(.025, astar, bstar),"estimatae" = astar/(astar + bstar) , "upper" = qbeta(.975, astar, bstar))
@@ -131,7 +131,7 @@ There is most definitely a statistical difference between the two intervals. Bot
 
 After receiving word that our sales forecast for the iPhone X will be 2% lower than previous, and the iPhone 8 will gain some traction for this next quarter by increasing 1.5%. Let's make some cutoff values for our new forecast and see what our posterior probability of getting more than 3% returns.
 
-```{r}
+```r
 # 3 percent returns for same data.
 cutoff <- .03*15660*(.98) ; cutoff1 <- .03*18782*(1.015)
 # Posterior Predictive Distributions 
