@@ -19,7 +19,6 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 <b>Internships & Work Experience:</b>
 
 <p>　・Strategy & Analytics: <a href="https://www.jtv.com/">Jewelry Television</a> </p>
-<p>　・Pro-Bono Analytics Consulting: 4 Small Businesses and Counting</p>
 <p>　・Data Science: <a href="https://lasers.llnl.gov/">Lawrence Livermore National Laboratories</a> </p>
 <p>　・Business Analysis: <a href="https://www.franklincovey.com">Franklin Covey</a> </p>
 <p>　・Recruitment Consulting: <a href="https://www.icon-partners.com/">Icon Partners</a> </p>
@@ -55,8 +54,8 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 
 <p>　・<strong>View</strong> a <a href="https://doi.org/10.1016/j.burn.2017.05.003">Publication Project</a>.</p>
 
-<p>　・<strong>Contact</strong> me 📧in the portal below for any analytic consulting requests.
-(Contact details upon request.)</p>
+<p>　・<strong>Contact</strong> me 📧in the portal below for any pro-bono analytic consulting requests.
+(4 small businesses and counting!)</p>
 
 <p> </p>
 <p> </p>
