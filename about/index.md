@@ -1,7 +1,7 @@
 
 ![Caption: Happiness](https://raw.githubusercontent.com/tykiww/Images/master/family/goblin_valley.jpg)
 
-I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/) working in their Advanced Analytics group. I am absolutely fascinated with the power of <b>Advanced Analytics</b> applied in high-level <b>Business Strategy</b>. My future goal is to pursue an MBA and drive insight using Analytics. However, more importantly, I am an alright husband crazy about futsal and going on adventures with my wife.
+I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/) working in their Advanced Analytics group. I am absolutely fascinated with the power of <b>Advanced Analytics</b> applied in high-level <b>Business Strategy</b> to ask better questions. My future goal is to pursue an MBA and drive quality decisions using analytics. However, more importantly, I am an alright husband crazy about futsal and going on adventures with my wife.
 
 
 <hr>
