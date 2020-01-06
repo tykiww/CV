@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Weighted Ensemble"
+title:  "Weighted Ensemble Analysis"
 image: "https://www.straitstimes.com/sites/default/files/articles/2017/09/29/st_20170929_29toon_34537752.jpg"
 # date:   2019-09-05
 excerpt: "Bike Sharing Predictions"
