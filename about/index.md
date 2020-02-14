@@ -45,7 +45,7 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 
 <p>                     ..</p>
 
-## Check it out:
+<h2> Check it out:</h2>
 
 <p>　・<strong>Connect</strong> with me on <a href="https://www.linkedin.com/in/taiki-wada">LinkedIn</a>!</p>
 
