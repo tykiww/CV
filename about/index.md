@@ -1,7 +1,7 @@
 
 ![Caption: Happiness](https://raw.githubusercontent.com/tykiww/Images/master/family/goblin_valley.jpg)
 
-I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/) working in their Advanced Analytics group. I am absolutely fascinated with the power of <b>Advanced Analytics</b> applied in high-level <b>Business Strategy</b> to ask better questions. My future goal is to pursue an MBA and drive quality decisions using analytics. However, more importantly, I am an alright husband crazy about futsal and going on adventures with my wife.
+I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/) working in their Advanced Analytics group. I am absolutely fascinated with the power of <b>Advanced Analytics</b> applied in high-level <b>Business Strategy</b> to ask better questions. My future goal is to pursue an MBA and drive quality decisions. However, more importantly, I am an alright husband crazy about futsal and going on adventures with my wife.
 
 
 <hr>
@@ -25,6 +25,7 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 
 <b> Volunteer: </b>
 
+<p>　・Analytics Consulting: <b>Contact me for Portofolio Creation, Data Science Learning, and Business Requests </b>
 <p>　・President: <a href="https://www.linkedin.com/company/byu-jsa/">BYU Japanese Student Association</a> </p>
 <p>　・Data Consulting: <a href="http://metaworklife.com/">Meta WL</a> </p>
 <p>　・Missionary: <a href="https://www.churchofjesuschrist.org/?lang=eng">The Church of Jesus Christ of Latter-Day Saints</a> </p>
@@ -54,10 +55,9 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 
 <p>　・<strong>View</strong> a <a href="https://doi.org/10.1016/j.burn.2017.05.003">Publication Project</a>.</p>
 
-<p>　・<strong>Contact</strong> me 📧in the portal below for any pro-bono analytic consulting requests.
-(4 small businesses and counting!)</p>
+<p>　・<strong>Contact</strong> me 📧in the portal below for any analytics consulting requests.</p>
 
 <p> </p>
 <p> </p>
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc2SngnqnI_c--X0yhQrerCvHW_Fel1OzOFsPIjv7-t8V73Xw/viewform?embedded=true" width="800" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc2SngnqnI_c--X0yhQrerCvHW_Fel1OzOFsPIjv7-t8V73Xw/viewform?embedded=true" width="800" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
