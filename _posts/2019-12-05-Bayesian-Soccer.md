@@ -1,136 +1,155 @@
 ---
 layout: post
-title:  "Eden Hazard v. Frank Lampard"
-image: "https://raw.githubusercontent.com/tykiww/imgbucket/master/img/Hazard/2.png"
+title:  "DiD it Work? EITC Analysis"
+image: "https://raw.githubusercontent.com/tykiww/imgbucket/master/img/DID/did.png"
 # date:   2019-09-05
-excerpt: "Poisson Analysis"
+excerpt: "Difference in Differences"
 project: true
 ---
 
-Eden Hazard is possibly the best Belgian soccer player in history. Since 2012, he has incrementally developed into a world-class star showered with FA cup and Premier league honors. (Edit: He is now playing for Real Madrid under Zizou).
+Let's look at several methods to see if a particular event had an effect over time. This time Series Analysis seeks to analyze earned income tax credits and evaluates different models on how they can show the impact of an event.
 
-<iframe width="703" height="450" src="https://www.youtube.com/embed/bjW5yJB40KE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![](https://s3.amazonaws.com/lowres.cartoonstock.com/accountants-santa-father_christmas-xmas-holiday-present-aban255_low.jpg)
 
-Given his track record per season at Chelsea, let's take a look at his goal rate using a [poisson-gamma bayesian model](). For this post, understanding bayesian probabilities is a prerequisite, so you may want to revisit it after learning the [bayesian learning cycle](https://en.wikipedia.org/wiki/Bayesian_inference). We'll run through a complete poisson-gamma analysis of Hazard and compare him to Lampard's time in Chelsea (league play only). Even for those not interested in soccer, this is still widely applicable for any [poisson](https://en.wikipedia.org/wiki/Poisson_distribution)-type data. 
+#### What are Earned Income Tax Credits?
 
-Instead of going through and explaining the statistical distributions and their assumptions, let's just go ahead and look at our data.
+As an introduction, earned income tax credits are credits given to lower income families with children that encourages work and offsets income taxes.
+
+"When filing taxes ... working families with children that have annual incomes below about $41,100 to $56,000  (depending on marital status and the number of dependent children) may be eligible for the federal EITC. Also,  working-poor people who have no children and have incomes below 15,570 (21,370 for a married couple) can receive a very small EITC. In the 2017 tax year, over 26 million working families and individuals in every state received  the EITC" ([source](https://www.cbpp.org/research/federal-tax/policy-basics-the-earned-income-tax-credit)).
+
+The EITC was enacted well in the 1970s, but has changed over time. In 1994, Policy 103-66 was enacted which increased the maximum credit for individuals with children ([source](https://fas.org/sgp/crs/misc/R44825.pdf)). Data here looks at the efficacy of this new policy in terms of engaging more individuals to work.
+
+```r
+library(tidyverse, verbose = FALSE)
+url <- "https://raw.githubusercontent.com/tykiww/projectpage/master/datasets/EITC/income_tax_credit.csv"
+dat <- read_csv(url)
+dat <- dplyr::select(dat, -X1)
+skimr::skim(dat) # no missing data. 
+```
+
+    ## Skim summary statistics
+    ##  n obs: 13746 
+    ##  n variables: 11 
+    ## 
+    ## -- Variable type:numeric -------------------------------------------------------
+    ##  variable missing complete     n     mean       sd     p0     p25     p50      p75      p100     hist
+    ##       age       0    13746 13746    35.21    10.16   20     26      34       44        54    ▇▆▅▆▅▃▃▅
+    ##  children       0    13746 13746     1.19     1.38    0      0       1        2         9    ▇▂▁▁▁▁▁▁
+    ##      earn       0    13746 13746 10432.48 18200.76    0      0    3332.18 14321.22 537880.61 ▇▁▁▁▁▁▁▁
+    ##        ed       0    13746 13746     8.81     2.64    0      7      10       11        11    ▁▁▁▁▁▃▂▇
+    ##      finc       0    13746 13746 15255.32 19444.25    0   5123.42 9636.66 18659.18 575616.82 ▇▁▁▁▁▁▁▁
+    ##  nonwhite       0    13746 13746     0.6      0.49    0      0       1        1         1    ▅▁▁▁▁▁▁▇
+    ##     state       0    13746 13746    54.52    27.13   11     31      56       81        95    ▆▃▃▂▆▅▁▇
+    ##    unearn       0    13746 13746     4.82     7.12    0      0       2.97     6.86    134.06 ▇▁▁▁▁▁▁▁
+    ##     urate       0    13746 13746     6.76     1.46    2.6    5.7     6.8      7.7      11.4  ▁▂▆▇▇▃▂▁
+    ##      work       0    13746 13746     0.51     0.5     0      0       1        1         1    ▇▁▁▁▁▁▁▇
+    ##      year       0    13746 13746  1993.35     1.7  1991   1992    1993     1995      1996    ▇▇▁▇▇▁▆▆
+
+#### Difference in Differences Model
+
+The Difference in Differences is a econometric model that compares a treatment's effect over longditudinal data. Particularily useful when we have samples with selection bias, the DiD model takes into account any initial heterogeneity between the beginning and ending groups. The modelcompares the differences average outcome from the treatment group before and after the treatment, then subtracting the difference in average outcome from the control before and after.
+
+This problem can be done in both a regression and just with the outcome data (y variable). If we were to manually calculate it with our data, it would look something like this:
+
+$$
+\hat{\delta}= (\bar{y}_{T,\,A}-\bar{y}_{C,\,A})-(\bar{y}_{T,\,B}-\bar{y}_{C,\,B})
+$$
+
+Where $\bar{y}$ is the collected dependent data and T,C,A,B is respectively: Treatment, Control, After, and Before. We can whip this out from our data below.
+
+```r
+# Compute the four data points needed in the DiD calculation:
+cntr_befr <- mean(dat$work[dat$eitc_start ==0 & dat$kids==0])
+trtm_befr <- mean(dat$work[dat$eitc_start ==0 & dat$kids==1])
+cntr_aftr <- mean(dat$work[dat$eitc_start ==1 & dat$kids==0])
+trtm_aftr <- mean(dat$work[dat$eitc_start ==1 & dat$kids==1])
+ 
+# Compute the effect of the EITC on the employment of individuals with children:
+(trtm_aftr-cntr_aftr)-(trtm_befr - cntr_aftr)
+```
+
+    ## [1] 0.04479962
+
+
+Alternatively, we can estimate the $\hat{\delta}$ value with a better statistical lens by running a regression using interactions between treatments and time. By using a regression, we are able to take into account other factors that may influence the treatment effect overall.
+
+To do this, let's begin by creating our necessary variables. We need to specify identifiers for when EITC started, individuals with greater than 1 child, placebo treatments for those that had no EITC.
+
+```r
+# the EITC started in 1994
+dat$eitc_start <- (dat$year > 1993)*1
+
+# EITC applies only for lower income individuals with greater than one child\
+dat$kids <- (dat$children >= 1)*1
+
+## Placebo for only pre-treatment years
+before_94 <- dat[dat$year <= 1993,]
+
+# Create a fake "post treatment" dummy
+before_94$post_trt <- (before_94$year >= 1992)*1
+```
+
+
+
+Now that this is over, we can use these results to run our regressions. Model 1 will be an interaction between time and when EITC really started. Remember the variable `did` is the interaction dummies between AFTER the EITC started and TREATED individuals. Other variables can be easily tacked on as long as we keep it in this interactional format below.
+
+```r
+did_lm <- lm(work ~ eitc_start*kids, data = dat) 
+summary(did_lm)$coefficients
+```
+
+    ##                     Estimate  Std. Error     t value     Pr(>|t|)
+    ## (Intercept)      0.575459734 0.008845078  65.0598825 0.000000e+00
+    ## eitc_start      -0.002073509 0.012931360  -0.1603474 8.726098e-01
+    ## kids            -0.129497878 0.011676313 -11.0906478 1.839206e-28
+    ## eitc_start:kids  0.046873132 0.017158122   2.7318335 6.306339e-03
+
+Our beta coefficient on the did is the delta, or our DiD estimator. Pretty close to our original estimate. Testing our null hypothesis that Delta is different from zero will show that we have sufficient evidence to infer that implementing the EITC had actually increased jobs.
+
+Furthermore, we can show the change in y from the period before treatment to after the change for both the treatment and control groups. The counterfactual indicates what would have happened if there was absolutely no treatment. We'll have to rearrange some variables in our model first.
+
+```r
+## Plot code from Rstudio bookdown
+C <- sum(coef(did_lm)[1:4])
+E <- sum(coef(did_lm)[c(1,2)])
+B <- sum(coef(did_lm)[c(1,3)])
+A <- coef(did_lm)[1]
+D <- E+(B-A)
+
+# PLOT
+plot(1, type="n", xlab="Treatment Period", ylab="jobs", xaxt="n",
+     xlim=c(-0.01, 1.01), ylim=c(0.3, .7))
+segments(x0=0, y0=A, x1=1, y1=E, lty=1, col=2)#control
+segments(x0=0, y0=B, x1=1, y1=C, lty=3, col=3)#treated
+segments(x0=0, y0=B, x1=1, y1=D, lty=4, col=4)#counterfactual
+         
+legend("topright", legend=c("control", "treated", 
+    "counterfactual"), lty=c(1,3,4), col=c(2,3,4))
+axis(side=1, at=c(0,1), labels=NULL)
+```
+
+![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/DID/did.png)
+
+Here, we clearly see that the treatment did increase jobs overall! Our counterfactuals clearly parallel those in the control, but originating from a different intercept.
+
+Now, if you hadn't already realized, we broke an important assumption. Did you think it was weird that we were using a bernoulli y in an OLS regression??
+
+
+The assumptions are as follows:
+
+1. The event was not determined by the outcome (no circular reference)
+2. Treatment and control groups have Parallel Trends in outcome
+3. Stable units: event and comparison is composed of stable units
+4. No spillover effects: Unrelated events don't have an effect! Nothing else happened.
+
+Technically, we have already broken one of the assumptions (2). The results are binary. Some of you may say, hey! Shouldn't we use a logistic regression? However, it isn't necessarily wrong to work it this way. We aren't necessarily looking at the individual predicted values just to study if an event had an effect. Although we may have predicted values above 1 or below 0, we are just looking at the coefficients for this analysis and don't really want to get too wrapped up in log odds transformations.
+
 
 <hr>
 
-## Data
+Now you know how to do a simple DiD model! We will continue to build on timeseires regresssions as we move forward.
 
-Our prior belief is that Hazard, on average, would make about 1 goal every three games whereas Lampard (in his prime) would score 1 every other game. This means that we will be using a gamma distribution for our prior with shape and scale.
 
-```r
-# Hazard Goals (Prior Beta(1,3))
-h_apps <- c(34, 35,38,31,36,34,25)
-h_gols <- c(9,14,14,4,16,12,12)
-h_year <- 2013:2019
-hazard <- data.frame("season" = h_year,"apps" = h_apps,"goals" = h_gols)
-# Lampard Goals (Prior Beta(1,2))
-l_apps <- c(37,38,38,38,35,37,24,37,36,24,30,29,26)
-l_gols <- c(5,6,10,13,16,11,10,12,22,10,11,15,6)
-l_year <- 2001:(2000+length(l_gols) )
-lamprd <- data.frame("season" = l_year,"apps" = l_apps,"goals" = l_gols)
-```
 
-We have both the appearances and number of goals for both Hazard and Lampard. Clearly, Super Frankie Lampy is retired and has played longer, but that should not interfere with our comparison. Mapping their performance below...
 
-```r
-par(mfrow = c(1,2))
-# Hazard
-plot(hazard$season,hazard$goals, type = "b", col = "steel blue",
-     ylim = c(0,50), ylab = "Count", xlab = "Season", main = "Hazard")
-lines(hazard$season,hazard$apps, type = "b",col =  "forest green")
-legend(2016,50,c("Goals","Games"),c("Steel Blue", "Forest Green"))
-# Lampard
-plot(lamprd$season,lamprd$goals, type = "b", col = "steel blue",
-     ylim = c(0,50), ylab = "Count", xlab = "Season", main = "Lampard")
-lines(lamprd$season,lamprd$apps, type = "b",col =  "forest green")
-legend(2007,50,c("Goals","Games"),c("Steel Blue", "Forest Green"))
-par(mfrow = c(1,2))
-```
 
-![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/Hazard/1.png)
-
-Now, at this time the post is written, the 2019 season has not ended quite yet so Hazard's current statistics are not completely up to date. However, we see a that there seems to be a rather strong correlation between games played and goals scored on both sides. Let's now check to see if there is a statistical difference between the two. 
-
-## Posterior/Prior Comparisons
-
-The comparison is done through monte carlo sampling. In a sense, each sample from the new distribution (given data) is compared against each other to see if one is greater than the other. This can be derived analytically through integrals, however, using around 100,000 monte carlo samples should give us an approximate estimate.
-
-```r
-ha <- 1; hb <- 3; # hazard
-la <- 1; lb <- 2; # lampard
-
-hazard_MC <- rgamma(100000,ha+sum(h_gols),hb+sum(h_apps))
-lmpard_MC <- rgamma(100000,la+sum(l_gols),lb+sum(l_apps))
-
-hist(lmpard_MC, col = "forest green"); hist(hazard_MC, add = TRUE, col = "steel blue");
-```
-
-![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/Hazard/2.png)
-
-Hazard's distribution looks wider than Lampards, but they are neatly bound. We notice that having more data definitely does help. Now let's make the comparison, is the rising star doing better (in terms of goals) than the old dog?
-
-```r
-mean(hazard_MC-lmpard_MC>0) 
-```
-
-    ## [1] 0.5293
-
-Looking at the distributions already gives us a hint, but we see that they are quite similar to each other in terms of goals scored. A two tailed test to see if there is an absolute difference says, not really!
-
-```r
-quantile(hazard_MC - lmpard_MC,c(.025,.975))
-```
-
-    ##        2.5%       97.5% 
-    ## -0.08721805  0.09948989
-
-## Predictions
-
-Now let's make some predictions. In a previous post on beta-binomial, we did similar with iphone returns; it is just the same process. The marginal likelihood including data will give us a good posterior prediction for what is to come.
-
-For Lampard, let's see how many goals he may have scored if he was to play another <i>typical</i> season with Chelsea. After some hefty computation (and the math checks out), this comes out to be a negative binomial distribution with the poisson parameter as a random variable. 
-
-```r
-# posterior predictive Lampard
-theta <- rgamma(median(l_apps)*1000,la+sum(l_gols),lb+sum(l_apps))
-ynew <- rpois(median(l_apps)*1000,theta)
-
-game_sim <- colSums(matrix(ynew, nrow=median(l_apps)))
-hist(game_sim) ; abline(v = median(game_sim), col = "red")
-quantile(game_sim,c(.025,.5,.975))
-```
-
-    ## 2.5%   50% 97.5% 
-    ##    6    12    20 
-
-![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/Hazard/3.png)
-
-He would most likely make around 12 goals (approximate median) give or take 7. That's quite a spread, but better than nothing! Let's take a look at how Hazard may do finishing off this season if he were to *finish off* his season given that he plays a typical season.
-
-```r
-# posterior predictive Hazard
-
-games_left <- median(h_apps) - h_apps[length(h_apps)]
-theta <- rgamma(games_left*1000,ha+sum(h_gols),hb+sum(h_apps))
-ynew <- rpois(games_left*1000,theta)
-
-game_sim <- colSums(matrix(ynew, nrow=games_left))
-hist(game_sim) ; abline(v = mean(game_sim), col = "red")
-qs <- quantile(game_sim,c(.025,.975))
-c("lower" = qs[1], "mean" = mean(game_sim), "upper" = qs[2])
-```
-
-    ## lower.2.5%        mean upper.97.5% 
-    ##      0.000       3.129       7.000 
-
-![](https://raw.githubusercontent.com/tykiww/imgbucket/master/img/Hazard/4.png)
-
-In Hazard's last 9 games, we can expect a posterior prediction of 3 goals. Of course, we are not taking into account any cup games for chelsea nor his national or friendly appearances.
-
-Now, granted we are making some wild predictions here. We are essentially claiming that his goal scoring is independent from each game and that he is "technically" not improving each time (a pretty Hume way to view the world). We are also not considering any other parameters such as assists, fouls, posession, etc. We are only making a "betterment" comparison using goals. Maybe to really show how great he is, comparing stats lik his assists and dribble success % may be necessary.
-
-However, if we were blocking our factors by game we can clearly see that there is a correlation and that making a prediction is appropriate for this situation. Surprisingly, we will be very close. Isn't this the fun of sports statistics though? We like to predict how well a player would perform but marvel when they beat the odds.
