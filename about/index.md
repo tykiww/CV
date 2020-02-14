@@ -35,11 +35,7 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 <p>　・Research Assistant: <a href="https://www.u-tokyo.ac.jp/en/index.html">University of Tokyo</a> </p>
 <p>　・Teaching Assistant: <a href="https://statistics.byu.edu/">Brigham Young University</a> </p> 
 
-
-</details>
 <p></p>
-
-
 
 <hr>
 
