@@ -30,22 +30,22 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 <p>　・Data Consulting: <a href="http://metaworklife.com/">Meta WL</a> </p>
 <p>　・Missionary: <a href="https://www.churchofjesuschrist.org/?lang=eng">The Church of Jesus Christ of Latter-Day Saints</a> </p>
 
-
-
 <b> Research/Teaching: </b>
 
 <p>　・Research Assistant: <a href="https://www.u-tokyo.ac.jp/en/index.html">University of Tokyo</a> </p>
-<p>　・Teaching Assistant: <a href="https://statistics.byu.edu/">Brigham Young University</a> </p> </details>
+<p>　・Teaching Assistant: <a href="https://statistics.byu.edu/">Brigham Young University</a> </p> 
 
 
-
+</details>
 <p></p>
+
+
 
 <hr>
 
 <p>                     ..</p>
 
-<h2> Check it out:</h2>
+## Check it out:
 
 <p>　・<strong>Connect</strong> with me on <a href="https://www.linkedin.com/in/taiki-wada">LinkedIn</a>!</p>
 
