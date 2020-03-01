@@ -10,6 +10,8 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 
 <p>　・<strong>View</strong> a <a href="https://doi.org/10.1016/j.burn.2017.05.003">Publication Project</a>.</p>
 
+<p>　・<strong>Click</strong>  <a href="https://tykiww.github.io/CV/summary">here</a> fora brief work Summary.</p>
+
 <p>　・ <strong>Contact</strong> me 📧in the portal below for any analytics consulting requests.</p>
 
 <p> </p>
@@ -18,12 +20,6 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc2SngnqnI_c--X0yhQrerCvHW_Fel1OzOFsPIjv7-t8V73Xw/viewform?embedded=true" width="800" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
 
-
-
-<hr>
-
-<details> 
-  <summary> <strong>Click</strong> Here for a Quick Work Summary </summary>
 
 
 
