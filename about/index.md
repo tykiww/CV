@@ -15,7 +15,7 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 
 <p>                     ..</p>
 
-<details> <summary> Click Here for a Quick Work Summary </summary>
+<details> <summary> <strong>Click</strong> Here for a Quick Work Summary </summary>
 
 <p></p>
 
@@ -52,7 +52,7 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 
 <h2> Contact Me:</h2>
 
-<p>　・ Contact me 📧in the portal below for any analytics consulting requests.</p>
+<p>　・ <strong>Contact</strong> me 📧in the portal below for any analytics consulting requests.</p>
 
 <p> </p>
 <p> </p>
