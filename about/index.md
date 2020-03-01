@@ -4,6 +4,13 @@
 I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/) working in their Advanced Analytics group. I am absolutely fascinated with the power of <b>Advanced Analytics</b> applied in high-level <b>Business Strategy</b> to ask better questions. My future goal is to pursue an MBA and drive quality decisions. However, more importantly, I am an alright husband crazy about futsal and going on adventures with my wife.
 
 
+<p>　・<strong>Connect</strong> with me on <a href="https://www.linkedin.com/in/taiki-wada">LinkedIn</a>!</p>
+
+<p>　・<strong>Fork</strong> my github <a href="https://github.com/tykiww">repositories</a>.</p>
+
+<p>　・<strong>View</strong> a <a href="https://doi.org/10.1016/j.burn.2017.05.003">Publication Project</a>.</p>
+
+
 <hr>
 
 <p>                     ..</p>
@@ -37,19 +44,15 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 
 <p></p>
 
+</details>
+
 <hr>
 
 <p>                     ..</p>
 
-<h2> Check it out:</h2>
+<h2> Contact Me:</h2>
 
-<p>　・<strong>Connect</strong> with me on <a href="https://www.linkedin.com/in/taiki-wada">LinkedIn</a>!</p>
-
-<p>　・<strong>Fork</strong> my github <a href="https://github.com/tykiww">repositories</a>.</p>
-
-<p>　・<strong>View</strong> a <a href="https://doi.org/10.1016/j.burn.2017.05.003">Publication Project</a>.</p>
-
-<p>　・<strong>Contact</strong> me 📧in the portal below for any analytics consulting requests.</p>
+<p>　・ Contact me 📧in the portal below for any analytics consulting requests.</p>
 
 <p> </p>
 <p> </p>
