@@ -10,10 +10,17 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 
 <p>　・<strong>View</strong> a <a href="https://doi.org/10.1016/j.burn.2017.05.003">Publication Project</a>.</p>
 
+<p>　・ <strong>Contact</strong> me 📧in the portal below for any analytics consulting requests.</p>
+
+<p> </p>
+
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc2SngnqnI_c--X0yhQrerCvHW_Fel1OzOFsPIjv7-t8V73Xw/viewform?embedded=true" width="800" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+
+
 
 <hr>
-
-<p>                     ..</p>
 
 <details> 
   <summary> <strong>Click</strong> Here for a Quick Work Summary </summary>
@@ -43,19 +50,3 @@ I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/)
 <p>　・Research Assistant: <a href="https://www.u-tokyo.ac.jp/en/index.html">University of Tokyo</a> </p>
 <p>　・Teaching Assistant: <a href="https://statistics.byu.edu/">Brigham Young University</a> </p> </details>
 
-
-
-
-
-<hr>
-
-<p>                     ..</p>
-
-<h2> Contact Me:</h2>
-
-<p>　・ <strong>Contact</strong> me 📧in the portal below for any analytics consulting requests.</p>
-
-<p> </p>
-<p> </p>
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc2SngnqnI_c--X0yhQrerCvHW_Fel1OzOFsPIjv7-t8V73Xw/viewform?embedded=true" width="800" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
