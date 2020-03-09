@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Bayesian or Frequentist?"
-image: "https://raw.githubusercontent.com/tykiww/imgbucket/master/img/tesseract/code_snippet.png"
+image: "https://raw.githubusercontent.com/tykiww/imgbucket/master/img/BayesvFreq/one.jpg"
 # date:   2019-09-05
 excerpt: "What is the difference?"
 project: true
