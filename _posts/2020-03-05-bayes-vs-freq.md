@@ -6,7 +6,7 @@ image: "https://raw.githubusercontent.com/tykiww/imgbucket/master/img/BayesvFreq
 excerpt: "What is the difference?"
 project: true
 ---
-
+ 
 
 
 Intuition vs. Pure Data (with a ton of assumptions..)
