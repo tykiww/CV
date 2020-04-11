@@ -19,10 +19,12 @@ Let's take a marketing example. Take a look at the data below
 2018 Apple iPhone X vs Apple iPhone 8 Q1 Sales and Refund Table (in thousands)
 
 <hr>
+
 | Phone        | Sold Q1    | Returns Q1  | Unit Price   |
 |--------------|------------|-------------|--------------|
 | iPhone X     | 12700      | 437         | 1.0          |
 | iPhone 8     | 8500       | 277         | 0.629        |
+
 <hr>
 
 
