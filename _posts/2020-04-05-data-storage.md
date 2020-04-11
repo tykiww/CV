@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "How Much of it is Data?"
+title:  "How Much Data Are you Using?"
 image: "https://raw.githubusercontent.com/tykiww/imgbucket/master/img/data_size/table_data_size.png"
 # date:   2019-09-05
-excerpt: "Computation Calculation"
+excerpt: "Calculating Data Space"
 project: true
 ---
 
