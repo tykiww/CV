@@ -18,11 +18,13 @@ Let's take a marketing example. Take a look at the data below
 
 2018 Apple iPhone X vs Apple iPhone 8 Q1 Sales and Refund Table (in thousands)
 
-
+<hr>
 | Phone        | Sold Q1    | Returns Q1  | Unit Price   |
 |--------------|------------|-------------|--------------|
 | iPhone X     | 12700      | 437         | 1.0          |
 | iPhone 8     | 8500       | 277         | 0.629        |
+<hr>
+
 
 In the realm of handheld phones, Apple is the largest giant of this day. Let's assume (given the data) that you are looking at the performance of your two best sellers. However, as with any product, the return rates are always concerning. Refund policy is 30 days, but the data shows a surprising amount of users refunding. As a standard, you have benchmarked that a continued (3 quarters) refund rate of over 3% for 3 quarters signals a need for a re-vamp, re-call, new release, or upgrade in hardware.
 
