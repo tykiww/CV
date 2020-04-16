@@ -86,11 +86,14 @@ After hearing customer feedback and making some changes and updating new feature
 
 2018 Apple iPhone X vs Apple iPhone 8 Q2 Sales and Refund Table (in thousands)
 
+<hr>
 
 | Phone        | Sold Q2    | Returns Q2  | Unit Price   |
 |--------------|------------|-------------|--------------|
 | iPhone X     | 15660      | 441         | 1.0          |
 | iPhone 8     | 18782      | 200         | 0.629        |
+
+<hr>
 
 Now let's make some posterior inferences from the information we have now.
 
