@@ -55,7 +55,7 @@ ci <- function(x, prob = FALSE) {
 
 Next is our model. As a brief explanation, we notice that we are replicating the sample of just 1 parameter over and over again. After sampling our data from our geometric, we are performing confidence intervals on all the data. These intervals are unlisted and created into tables. We should have 100,000 confidence intervals!
 
-```{r}
+```r
 set.seed(15)
 
 replicate(n_reps,{
@@ -101,7 +101,7 @@ That's pretty impressive! If you were to go knock on doors, you 9/10 times you w
 
 Now, this is only in the case of having a true parameter of interest. As you noticed the many confidence intervals we generated with the `replicate()` function, our confidence intervals will not always capture the true mean. However, if we have a good enough model, all of our confidence intervals should contain the true value 95% of the time. Let's take a look.
 
-```{r}
+```r
 interval <- dplyr::select(sims,-2)
 true_mean <- 1/p 
 mean(interval[1] < true_mean & true_mean < interval[2])
