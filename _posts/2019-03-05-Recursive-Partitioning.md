@@ -20,7 +20,7 @@ We must remember however, that partitioning and clustering algorithms are simila
 
 <hr>
 
-```{r}
+```r
 library(rpart)
 library(rpart.plot)
 library(tidyverse)
@@ -30,7 +30,7 @@ Let's say we just want to create an intuitive diagram that shows the economics o
 
 We have a nice dataset from UC Irvine that will give us some help.
 
-```{r}
+```r
 cn <- c("price","maint","doors","persons","luggage","safety","acceptable")
 dat <- read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/car/car.data",col_names = cn)
 dat <- drop_na(dat)
@@ -46,7 +46,7 @@ dat <- drop_na(dat)
 
 The structure of the data is rather intuitive (and clean!). Our goal now is to map how acceptable a car is given some quality. It's really easy (as long as we are not looking to evaluate our model..). We really don't need to for this specific example, but we will create our own train and test sets.
 
-```{r}
+```r
 set.seed(15)
 train.ind <- sample(nrow(dat),nrow(dat)*.80)
 train.dat <- dat[train.ind,]
@@ -57,13 +57,13 @@ We notice though, that the data is so small, some of the information will get lo
 
 Let's go ahead and fit a decision tree by classification
 
-```{r}
+```r
 train.fit <- rpart(acceptable~ ., data = train.dat, method = "class")
 ```
 
 We must specify class here as every column is made up of factors. Other than that, it's real simple. Our output/diagram will be given below.
 
-```{r}
+```r
 rpart.plot(train.fit, extra = 104, trace = 1) # specify 104 for multiple classes..
 ```
 
@@ -74,7 +74,7 @@ Unfortunately, it's really small. Even after tweaking the plot `cex` and limits,
 
 Alternatively, if we're not looking for something too rigorous, we have this.
 
-```{r}
+```r
 prp(fit,extra = 104)
 ```
 
@@ -84,7 +84,7 @@ We notice how intuitive this diagram is. Most people look for 4 person seats wit
 
 For a numeric dataset, we would evaluate the model by predicting our values and identifying the lowest root mean sum of squared errors as below:
 
-```{r}
+```r
 rpart_test_pred <- predict(test.fit,test.dat[,-7],type = "vector" )
 
 #calculate RMS error IF numeric..
