@@ -9,15 +9,15 @@ project: true
 
 ### Case
 
-*What is the MONTHLY US residential energy consumption for the next 2 years for the 'Short-Term'*
+*What is the MONTHLY US residential energy consumption for the next 2 years?*
 
 ![](http://needtoknow.nas.edu/energy/media/media_browser_uploads/images/item_1_.jpg)
 
-As behavioral economics dictates, monthly values tend to rise and fall according to season. Winter Holidays seem to bring in some the highest volume of consumption during a period. Ice cream sales on aggregate decrease significantly during the winter.
-
+Monthly values tend to rise and fall according to season. It's just how people are! For example, winter holidays seem to bring in some the highest volume of retail revenue in a year. On the other hand, ice cream sales decrease on aggregate during this period.
 
 ### Exploratory Data Analysis
-Likewise, energy consumption in the US functions in a similar way. Let's take a look at how we can forecast the 2-year energy consumption for US residents. Data comes from [eia.gov](http://eia.gov) which stores "energy information" including energy sources and news events that may adversely or conversely affect energy acquisition in the US. Finding the right type of data is a little hairy, but luckily there are filters that let you adjust parameters before you download any of the data. We are going to rip the energy data from the 'short-term energy outlook' found in the `read.csv` link. 
+
+Likewise, energy consumption in the US has its own trends. Let's take a look at how we can forecast the 2-year energy consumption for US residents. Data comes from [eia.gov](http://eia.gov) which stores "energy information" including energy sources and news events that may adversely or conversely affect energy acquisition in the US. Finding the right type of data can get a little hairy, but eia has it all covered. Let's rip the energy data from the 'short-term energy outlook' found in the `read.csv` link. 
 
 ``` r
 data1 <- read.csv("http://www.eia.gov/totalenergy/data/browser/csv.cfm?tbl=T02.01")
