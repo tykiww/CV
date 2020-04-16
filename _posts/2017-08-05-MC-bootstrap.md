@@ -17,8 +17,6 @@ One type of monte carlo sampling is the bootstrap technique (this is something t
 
 In short, it's a ridiculously useful technique to create more data when we have just partial information. Well then, let's take a look at some coding!
 
-===================================
-
 ### Case
 
 You are a pest control sales agent looking to figure out how many doors you need to knock on, before having at least 1 potential customer (an individual that 'at the least' gives you their contact info). Let's just say, that this event X is represented by a geometric distribution (n = 1,2,..100) with p = 0.2 for this particular area (a gross oversimplification). 
