@@ -7,10 +7,6 @@ excerpt: "Calculating Data Space"
 project: true
 ---
 
-
-
-### Question
-
 What parameters from an EEG scan are most critical to understanding whether the eye moves or not?
 
 EEG is a shorthand for an Electroencephalogram. It is a brain-activity monitor. To be honest, I have no idea how it works but we have some data and parameters to guide our decisions. The data below was collected to monitor eye Detection. Can the parameters collected by the scanner detect if your eye is moving? In many ways, it is an evaluation of the EEG machine. 
