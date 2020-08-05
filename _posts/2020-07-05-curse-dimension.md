@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Curse of Dimensionality"
+title:  "Intro to the Curse of Dimensionality"
 image: "https://raw.githubusercontent.com/tykiww/imgbucket/master/img/curse/three.png"
 # date:   2019-09-05
 excerpt: "Exploring the Latent Space"
