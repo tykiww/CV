@@ -3,7 +3,7 @@ layout: post
 title:  "Logistic Regression Interpretation"
 image: "http://res.cloudinary.com/dyd911kmh/image/upload/f_auto,q_auto:best/v1534281070/linear_vs_logistic_regression_edxw03.png"
 # date:   2019-09-05
-excerpt: "Calculating Data Space"
+excerpt: "Breaking down the Logistic Equation"
 project: true
 ---
 
