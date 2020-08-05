@@ -3,7 +3,7 @@ layout: post
 title:  "Housing and Markov Chain Monte Carlo"
 image: "https://raw.githubusercontent.com/tykiww/imgbucket/master/img/mcmc_house_price/four.png"
 # date:   2019-09-05
-excerpt: "Housing Value of top 10 Wealthiest States"
+excerpt: "Housing Value of the Top 10 States"
 project: true
 ---
 
