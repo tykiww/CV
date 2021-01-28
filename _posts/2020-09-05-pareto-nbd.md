@@ -1,12 +1,12 @@
-
 ---
 layout: post
-title:  "Experimenting with Customer Lifetime Value"
-image: "https://raw.githubusercontent.com/tykiww/projectpage/master/datasets/pareto_nbd/heter.png"
+title:  "Customer Lifetime Value"
+image: "https://raw.githubusercontent.com/tykiww/projectpage/master/datasets/pareto_nbd/heter.pn"
 # date:   2019-09-05
-excerpt: "Housing Value of the Top 10 States"
+excerpt: "Experimenting with Customer Lifetime Value"
 project: true
 ---
+
 
 Although the formula to calculate lifetime value is simple, there are still a variety of methods to estimate each parameter associated with it.
 
