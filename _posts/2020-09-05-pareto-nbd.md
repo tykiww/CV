@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Customer Lifetime Value"
+title:  "A Customer's Lifetime Value"
 image: "https://raw.githubusercontent.com/tykiww/projectpage/master/datasets/pareto_nbd/heter.png"
 # date:   2019-09-05
 excerpt: "Experimenting with Customer Lifetime Value"
