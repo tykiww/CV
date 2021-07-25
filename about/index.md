@@ -1,7 +1,7 @@
 
 ![Caption: Happiness](https://raw.githubusercontent.com/tykiww/Images/master/family/goblin_valley.jpg)
 
-I am currently a Business Analyst for [Jewelry Television](https://www.jtv.com/) working in their Advanced Analytics group. I am absolutely fascinated with the power of <b>Advanced Analytics</b> applied in high-level <b>Business Strategy</b> to ask better questions. However, more importantly, I am an alright husband crazy about futsal and going on adventures with my wife.
+I am currently a Business Analyst for [The Coca-Cola Company](https://www.coca-colacompany.com/) working in their Business Insights and Analytics group. I am absolutely fascinated with the power of <b>Advanced Analytics</b> applied in high-level <b>Business Strategy</b>. However, more importantly, I am an alright husband crazy about futsal and going on adventures with my wife and daughter. 
 
 
 <p>　・<strong>Connect</strong> with me on <a href="https://www.linkedin.com/in/taiki-wada">LinkedIn</a>!</p>
