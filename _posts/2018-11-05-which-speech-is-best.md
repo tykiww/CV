@@ -16,7 +16,7 @@ Ted talks are so popular, "TED.com currently have over 2,500+ talks, with additi
 
 Our goal is to create our own speaker session by discovering which topics are the most popular. Of course, that is definitely not enough to create a business model, however we this will be some important research. 
 
-[Here](https://raw.githubusercontent.com/tykiww/projectpage/master/datasets/Ted/ted.csv) is our dataset of TED talks. It's a rather large file (7MB), so be carful with it running computations. 
+[Here](https://raw.githubusercontent.com/tykiww/projectpage/master/datasets/Ted/ted.csv) is our dataset of TED talks. It's a rather annoyingly medium sized file (7MB), so don't freak out if it doesn't run well on disk. 
 
 Here are the libraries to use for today.
 
