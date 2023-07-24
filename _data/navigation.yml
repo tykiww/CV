@@ -3,11 +3,11 @@
 - title: Home
   url: /
 
-- title: Blog
-  url: https://tykiww.github.io
-
-- title: Projects
+- title: Analytics Projects
   url: /projects/
+
+- title: Data Science Projects
+  url: https://github.com/tykiww
 
 - title: Bio
   url: /about/
