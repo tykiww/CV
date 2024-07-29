@@ -1,13 +1,15 @@
 # Site navigation links
 
+
+
 - title: Home
   url: /
 
-- title: Analytics
-  url: /projects/
+- title: Bio
+  url: /about/
 
 - title: AI
   url: https://huggingface.co/tykiww
 
-- title: Bio
-  url: /about/
+- title: Analytics
+  url: /projects/
