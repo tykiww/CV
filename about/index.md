@@ -1,7 +1,7 @@
 
 ![Caption: Happiness](https://raw.githubusercontent.com/tykiww/Images/master/family/goblin_valley.jpg)
 
-I am currently an MBA Student at [Emory Goizueta School of Business]([https://www.coca-colacompany.com/](https://goizueta.emory.edu/)) seeking to pivot as a Product Managemer in tech. My background is in Data Science and Advanced Analytics applied in strategic and tactical domains. I love tackling complex decision challenges and I love building! More to come, crafting with LLMs 👀.
+I am currently an MBA Student at [Emory Goizueta School of Business]([https://www.coca-colacompany.com/](https://goizueta.emory.edu/)). My background is in Data Science and Advanced Analytics applied in strategic and tactical domains. I love tackling complex decision challenges and I love building! More to come, crafting with LLMs 👀.
 
 
 <p>　・<strong>Connect</strong> with me on <a href="https://www.linkedin.com/in/taiki-wada">LinkedIn</a>!</p>
