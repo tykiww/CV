@@ -1,7 +1,7 @@
 
 ![Caption: Happiness](https://raw.githubusercontent.com/tykiww/Images/master/family/goblin_valley.jpg)
 
-I am a hands-on Product & Engineering Manager, specializing in leading teams that build enterprise Data Science applications from scratch. My initial background is in applying statistics, advanced analytics and deep learning for executive decision making. Curently, I have fallen in love with building products with startups in the innovation ecosystem. I'm here as a strategic partner to ship products that effectively create and capture value.
+I am a hands-on Product & Engineering Manager, specializing in leading teams that build enterprise Data Science applications from scratch. My initial background is in applying statistics, advanced analytics and deep learning for executive decision making. Curently, I have fallen in love with building products with startups in the innovation ecosystem. I'm here as a strategic partner to ship software products that effectively create and capture value.
 
 
 <p>　・<strong>Connect</strong> with me on <a href="https://www.linkedin.com/in/taiki-wada">LinkedIn</a>!</p>
