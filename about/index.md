@@ -1,18 +1,16 @@
 
 ![Caption: Happiness](https://raw.githubusercontent.com/tykiww/Images/master/family/goblin_valley.jpg)
 
-I am currently an MBA Student at [Emory Goizueta School of Business]([https://www.coca-colacompany.com/](https://goizueta.emory.edu/)). My background is in Data Science and Advanced Analytics applied in strategic and tactical domains. I love tackling complex decision challenges and I love building! More to come, crafting with LLMs 👀.
+I am a hands-on Product & Engineering Manager, specializing in leading teams that build enterprise Data Science applications from scratch. My initial background is in applying statistics, advanced analytics and deep learning towards executive decision making. Curently, I have fallen in love with building products with startups in the innovation ecosystem. I'm here as a strategic partner to ship products that effectively create and capture value.
 
 
 <p>　・<strong>Connect</strong> with me on <a href="https://www.linkedin.com/in/taiki-wada">LinkedIn</a>!</p>
 
-<p>　・<strong>View</strong> my AI models and apps on <a href="https://huggingface.co/tykiww">Hugging Face</a>.</p>
-
-<p>　・<strong>Fork</strong> my github <a href="https://github.com/tykiww">repositories</a>.</p>
+<p>　・<strong>Peek</strong> 👀 into a <a href="https://moji-app.com">project I'm working on</a> through the <a href="https://www.techstars.com/founder-catalyst"> Techstars Founders Catalyst</a>.</p>
 
 <p>　・<strong>Read</strong> a <a href="https://doi.org/10.1016/j.burn.2017.05.003">Publication</a>.</p>
 
-<p>　・<strong>Contact</strong> me 📧in the portal below for any AI or analytics consulting requests.</p>
+<p>　・<strong>Contact</strong> me 📧 in the portal below for any inquiries into <b>Fractional product requests</b>.</p>
 
 <p> </p>
 
